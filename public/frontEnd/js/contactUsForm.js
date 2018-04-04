@@ -37,11 +37,7 @@ $(document).ready(function() {
                     $("#contact-us-response").html(data);
                     $('#contact-us-form')[0].reset();
                 },
-                error: function (data) {
-                    console.log(formData);
-                }
             });
-
         }
     });
 });

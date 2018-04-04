@@ -35,11 +35,7 @@ $(document).ready(function() {
                     jQuery("#submit-model").modal('show');
                     $("#contact-us-response").html(data);
                 },
-                error: function (data) {
-                    console.log(formData);
-                }
             });
-
         }
     });
 });

@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Model\Product;
 use App\Model\BulkOrder;
 use App\Model\ContactUs;
+use App\Model\OrderProduct;
+use App\Model\Order;
+use Cart;
 
 class AdminHomeController extends Controller
 {
@@ -51,17 +54,39 @@ class AdminHomeController extends Controller
     {
         BulkOrder::where('id', $id)->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'order deleted');
     }
 
     /**
-     * Show the contact us form data.
+     * Show orders list.
      *
      */
-    public function contactUsData()
+    public function orders()
     {
-    	$contactUses = ContactUs::all();
+        $orders = Order::all();
 
-        return view('admin.pages.contactus', compact('contactUses'));
+        return view('admin.pages.orders', compact('orders'));
+    }
+
+    /**
+     * Show all products by order.
+     *
+     */
+    public function orderProducts($id)
+    {
+    	$orderProducts = OrderProduct::where('order_id', $id)->get();
+
+        return view('admin.pages.productsListOfOrder', compact('orderProducts'));
+    }
+
+    /**
+     * delete order
+     *
+     */
+    public function deleteOrder($id)
+    {
+        Order::where('id', $id)->delete();
+
+        return redirect()->back()->with('message', 'order deleted');
     }
 }

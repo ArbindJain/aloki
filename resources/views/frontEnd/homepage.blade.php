@@ -4,11 +4,11 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-        <title>ALoki - Fisk</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="viewport" content="width=device-width">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>ALoki - Fisk</title>
         <link rel="icon" type="image/png" href="{{ asset('frontEnd/img/favicon.png') }}"/>
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700%7CAlex+Brush%7CPhilosopher:400,700,900" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('frontEnd/css/bootstrap.css') }}">
@@ -38,11 +38,65 @@
                         <li><a href="#about">About us</a></li>
                         <li><a href="#news">Quality Guarantee</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="#contact"> <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                        <li>
+                            <a href="#" id="cartShow">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                                <span id="cartData">
+                                    @if(Cart::count() > 0)
+                                        {{ Cart::count() }} Items - KR.{{ Cart::total() }}
+                                    @endif
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <!-- Cart items Modal -->
+        <div class="modal fade" id="cart-model">
+            <div class="modal-dialog">
+                <div class="modal-content" id="cart-table">
+                    
+                </div>
+            </div>
+        </div>
+        <!--User details when checkout Modal -->
+        <div class="modal fade" id="user-checkout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="">
+                        <div class="col-md-12">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h2 class="main-title text-center">Fill all details</h2>
+                        </div>
+                        <div class="col-md-8 col-md-push-2">
+                            <div class="contact-form">
+                                <form id="checkout-form" role="form" action="" method="">
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="name" placeholder="Name" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="email" placeholder="Email" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="phone" placeholder="Phone Number" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="address" placeholder="Address" required />
+                                    </div>
+                                    <div>
+                                        {{-- <input type="hidden" name="item" value="{{ $product->name }}" required /> --}}
+                                    </div>
+                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="order-confirm" onclick="confirm('Once order confirmed, can not be changed')">Confirm</button>
+                                    <span class="text-danger">c.o.d. only</span>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
          <div class="load">
              <div class="load-container">
@@ -150,48 +204,65 @@
                                 <li class="col-md-4 col-sm-6 col-xs-6 wow fadeInDown" data-wow-delay="0.2s">
                                     <a href="#" class="" data-toggle="modal" data-target="#menu-01">
                                         <img src="{{ asset('images/products').'/'.$product->image }}" alt="placehoder">
+                                    </a>
+                                    <span class="menu-list-item-title">
+                                        <span class="menu-list-item-name">{{ $product->name }}</span>
+                                        <span class="menu-list-item-price-row">
+                                            <span class="menu-list-item-price">KR. {{ number_format($product->price, 2, '.', ',') }}
+                                                <span>1 kg</span>
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <div class="cartDiv">
                                         <span class="menu-list-item-title">
-                                            <span class="menu-list-item-name">{{ $product->name }}</span>
+                                            <span class="menu-list-item-name">Quantity :
+                                                <input type="hidden" class="productId" name="productId" value="{{ $product->id }}">
+                                                <input type="number" class="form-control quiantityValue" name="quant[1]" value="1" min="1" style="display: inline-block; width: 75px;">Kg
+                                            </span>
                                             <span class="menu-list-item-price-row">
-                                                <span class="menu-list-item-price">KR. {{ number_format($product->price, 2, '.', ',') }}
-                                                    <span>1 kg</span>
-                                                </span>
+                                                <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                                <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
                                             </span>
                                         </span>
                                         <span class="menu-list-item-ingridients">
                                             <a id="bulk-order-{{ $product->id }}" class="btn btn-sm btn-success pull-left" data-toggle="modal" data-target="#bulk-order-details-{{ $product->id }}">Bulk order Inquiry</a>
-                                            <a class="btn btn-sm btn-success pull-right">Add to Cart</a>
+                                            <a class="btn btn-sm btn-success pull-right cart-submit" href="{{ route('cartAdd', $product->id) }}">Add to Cart</a>
                                         </span>
-                                    </a>
-                                    <!-- Modal -->
-                                    <div class="modal fade bulk-order-model" id="bulk-order-details-{{ $product->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <h2 class="main-heading">Fill details</h2>
-                                                    </div>
-                                                    <div class="col-md-8 col-md-push-2">
-                                                        <div class="contact-form">
-                                                            <form role="form" action="" method="">
-                                                                {{ csrf_field() }}
-                                                                <div class="form-group">
-                                                                    <input type="text" class="form-control" name="name" placeholder="Name" required />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <input type="text" class="form-control" name="email" placeholder="Email" required />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <input type="text" class="form-control" name="phone" placeholder="Phone Number" required />
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <input type="text" class="form-control" name="address" placeholder="Address" required />
-                                                                </div>
-                                                                <div>
-                                                                    <input type="hidden" name="item" value="{{ $product->name }}" required />
-                                                                </div>
-                                                                <button type="submit" name="submit" class="btn btn-primary btn-lg text-center bulk-submit">Submit</button>
-                                                            </form>
+                                        <!-- Modal -->
+                                        <div class="modal fade bulk-order-model" id="bulk-order-details-{{ $product->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="">
+                                                        <div class="col-md-12">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                            <h2 class="modal-title text-center">Fill details</h2>
+                                                        </div>
+                                                        <div class="col-md-8 col-md-push-2">
+                                                            <div class="contact-form">
+                                                                <form role="form" action="" method="">
+                                                                    {{ csrf_field() }}
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control" name="name" placeholder="Name" required />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control" name="email" placeholder="Email" required />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control" name="phone" placeholder="Phone Number" required />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control" name="address" placeholder="Address" required />
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="hidden" name="item" value="{{ $product->name }}" required />
+                                                                    </div>
+                                                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center bulk-submit">Submit</button>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1113,9 +1184,10 @@
                     <div class="modal fade" id="submit-model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                                <div class="row">
+                                <div class="">
                                     <div class="col-md-12">
-                                        <h2 class="main-heading" id="contact-us-response"></h2>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h2 id="contact-us-response" class="modal-title text-center">Fill details</h2>
                                     </div>
                                     <div class="col-md-8 col-md-push-2">
                                         <div class="contact-form text-center">
@@ -1196,8 +1268,9 @@
         <script src="{{ asset('frontEnd/js/vendor/jquery.countTo.js') }}"></script>
         <script src="{{ asset('frontEnd/js/vendor/jquery.inview.js') }}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_6m6Glf1-P7jvVdHZ00e3Ue_EoUNe39g"></script>
-        <script src="{{ asset('frontEnd/js/main.js') }}"></script> 
+        <script src="{{ asset('frontEnd/js/main.js') }}"></script>
         <script src="{{ asset('frontEnd/js/bulkOrderForm.js') }}"></script>
         <script src="{{ asset('frontEnd/js/contactUsForm.js') }}"></script>
+        <script src="{{ asset('frontEnd/js/cart.js') }}"></script>
     </body>
 </html>
