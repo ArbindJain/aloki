@@ -43,7 +43,7 @@
                                 <span class="glyphicon glyphicon-shopping-cart"></span>
                                 <span id="cartData">
                                     @if(Cart::count() > 0)
-                                        {{ Cart::count() }} Items - KR.{{ Cart::total() }}
+                                        {{ Cart::count() }} Elementer - KR.{{ Cart::total() }}
                                     @endif
                                 </span>
                             </a>
@@ -215,7 +215,7 @@
                                     </span>
                                     <div class="cartDiv">
                                         <span class="menu-list-item-title">
-                                            <span class="menu-list-item-name">Quantity :
+                                            <span class="menu-list-item-name">Mengde :
                                                 <input type="hidden" class="productId" name="productId" value="{{ $product->id }}">
                                                 <input type="number" class="form-control quiantityValue" name="quant[1]" value="1" min="1" style="display: inline-block; width: 75px;">Kg
                                             </span>
@@ -302,11 +302,11 @@ IKKE VÆR REDD FOR Å KLAGE PÅ TJENESTEN VÅR
                             </h2>
                             <br><br><br>
                            <!--  <h3 class="wow fadeInDown">Aloki</h3> -->
-                            <p class="wow fadeInUp">Jeg er misfornøyd med smak</p>
-                            <p class="wow fadeInUp">Jeg fant ben i fisken som skulle være benfri</p>
-                            <p class="wow fadeInUp">Jeg synes produktet deres var dyrt</p>
-                            <p class="wow fadeInUp">Jeg er misfornøyd med selgers oppførsel</p>
-                            <p class="wow fadeInUp">Jeg angrer mitt kjøp</p>
+                            <p class="wow fadeInUp" style="font-size: 24px!important;">Jeg er misfornøyd med smak</p>
+                            <p class="wow fadeInUp" style="font-size: 24px!important;">Jeg fant ben i fisken som skulle være benfri</p>
+                            <p class="wow fadeInUp" style="font-size: 24px!important;">Jeg synes produktet deres var dyrt</p>
+                            <p class="wow fadeInUp" style="font-size: 24px!important;">Jeg er misfornøyd med selgers oppførsel</p>
+                            <p class="wow fadeInUp" style="font-size: 24px!important;">Jeg angrer mitt kjøp</p>
 
                          <!--    <a class="btn btn-default btn-lg" href="#"  data-toggle="modal" data-target="#about-01">more</a> -->
                         </div>
@@ -352,7 +352,7 @@ IKKE VÆR REDD FOR Å KLAGE PÅ TJENESTEN VÅR
                 <div class="row">
                     <div class="about-row section">
                         <div class="col-md-6 text-center">
-                            <h2 class="main-heading ">Fresh<span> from the Sea</span>
+                            <h2 class="main-heading ">Fersk<span> fra havet</span>
                                 <span class="main-heading-decor">
                                     <span class=""><img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20"></span>
 
@@ -362,13 +362,13 @@ IKKE VÆR REDD FOR Å KLAGE PÅ TJENESTEN VÅR
                                     <span class=""><img class="wow fadeInUp js-rotate" data-wow-delay=".6s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20"></span>
                                 </span>
                             </h2>
-                            <p> Sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                            <p style="font-size: 26px; color: #000;"> 
+- Legg inn bestilling, så ringer vi for å avtale når du ønsker levering<br>
+- Du får se varene ved levering før du betaler<br>
+- Gratis levering
+
                             </p>
-                            <a class="btn btn-primary btn-lg" href="#menu">our products</a>
+                           <!--  <a class="btn btn-primary btn-lg" href="#menu">our products</a> -->
                         </div>
 
                         <div class="col-md-6 col-xs-12 about-photo">
@@ -1148,7 +1148,7 @@ IKKE VÆR REDD FOR Å KLAGE PÅ TJENESTEN VÅR
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="main-heading">Contact<span> lorem dolorem</span>
+                        <h2 class="main-heading">Kontakt oss<span></span>
                             <span class="main-heading-decor">                          
                                 <span class="">
                                     <img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20">
@@ -1170,22 +1170,22 @@ IKKE VÆR REDD FOR Å KLAGE PÅ TJENESTEN VÅR
                             <form id="contact-us-form" method="" action="">
                                 {{ csrf_field() }}
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Navn" required />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required />
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="E-post" required />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" required />
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefonnummer" required />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required />
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Emne" required />
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Message" rows="7"></textarea>
+                                    <textarea class="form-control" id="message" name="message" placeholder="Budskap" rows="7"></textarea>
                                 </div>
 
-                                <button type="button" id="contact-submit" name="submit" class="btn btn-primary btn-lg text-center">Submit your message</button>
+                                <button type="button" id="contact-submit" name="submit" class="btn btn-primary btn-lg text-center">send inn meldingen din</button>
                             </form>
                         </div>
                     </div>
@@ -1232,17 +1232,17 @@ IKKE VÆR REDD FOR Å KLAGE PÅ TJENESTEN VÅR
                                 <a href="http://linkedin.com/" target="_blank"><span class="ti-linkedin"></span></a>
                             </li>
                             
-                            <li class="wow fadeInDown" data-wow-delay="0.8s">
+                            <!-- <li class="wow fadeInDown" data-wow-delay="0.8s">
                                 <a href="https://vimeo.com/" target="_blank"><span class="ti-vimeo-alt"></span></a>
                             </li>
                             
                             <li class="wow fadeInDown" data-wow-delay="1s">
                                 <a href="http://youtube.com/" target="_blank"><span class="ti-youtube"></span></a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
 
-                    <div class="col-md-4 col-md-offset-4 col-sm-12">
+                    <!-- <div class="col-md-4 col-md-offset-4 col-sm-12">
                         <div class="footer-newsletter">
                             <div class="center text-center">
                                 <h3>stay tuned</h3>
@@ -1260,7 +1260,7 @@ IKKE VÆR REDD FOR Å KLAGE PÅ TJENESTEN VÅR
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-md-12 text-center">
                         <img class="footer-logo" src="{{ asset('frontEnd/img/logo.png') }}" alt="footer-logo">
