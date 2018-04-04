@@ -112,7 +112,7 @@
         <section class="home image-slider">
             <div class="home-slider text-center">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background: url('frontEnd/img/fish-2366925_1920.jpg');">
+                    <div class="swiper-slide" style="background: url('frontEnd/img/h1.jpg');">
                        <h1 class="main-heading inverse">velkommen til aloki<span>Norges beste fiskeforretning online</span>
                             <!-- <span class="main-heading-decor">                          
                                 <span class="">
