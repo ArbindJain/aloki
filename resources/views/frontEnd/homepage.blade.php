@@ -30,14 +30,14 @@
                     </a>
                 </div>
 
-                <div class="collapse navbar-collapse" id="myNavbar">
+                <div class=" navbar " id="">
                     <ul class="nav navbar-nav">
                         <!-- <li><a href="#">home</a></li> -->
-                        <li><a href="#menu">Home Delivery</a></li>
-                        <li><a href="#product">Products</a></li>
-                        <li><a href="#about">About us</a></li>
-                        <li><a href="#news">Quality Guarantee</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><b href="" style="font-size: 14px; color: red;">Hjemlevering **  &nbsp;</b></li>
+                        <li><a href="#product" style="font-size: 14px">Produkt</a></li>
+                        <li><a href="#about" style="font-size: 14px">Bedriftskunde</a></li>
+                        <li><a href="#news" style="font-size: 14px">Kvalitetsgaranti</a></li>
+                        <li><a href="#contact" style="font-size: 14px">Kontakt oss</a></li>
                         <li>
                             <a href="#" id="cartShow">
                                 <span class="glyphicon glyphicon-shopping-cart"></span>
@@ -113,7 +113,7 @@
             <div class="home-slider text-center">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" style="background: url('frontEnd/img/fish-2366925_1920.jpg');">
-                       <h1 class="main-heading inverse">Welcome<span>Aloki is here</span>
+                       <h1 class="main-heading inverse">velkommen til aloki<span>Norges beste fiskeforretning online</span>
                             <!-- <span class="main-heading-decor">                          
                                 <span class="">
                                     <img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20">
@@ -129,14 +129,14 @@
                             </span> -->
                         </h1>
 
-                        <h2 class="home-slider-title-main">100% fresh</h2>
+                        <!-- <h2 class="home-slider-title-main">100% fresh</h2>
                         <div class="home-slider-title-small" >Lorem ipsum dolor sit amet, consectetur adipisicing</div>
 
                         <a class="arrow bounce text-center" href="#about">
                             <span class="ti-mouse"></span>
                             scroll down
                             <span class="ti-angle-double-down"></span>
-                        </a>
+                        </a> -->
                     </div>
 
 
@@ -186,7 +186,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="main-heading "><!-- Recomendation --> <span>PRODUCTS</span>
+                        <h2 class="main-heading "><!-- Recomendation --> <span>produkt</span>
                             <span class="main-heading-decor">
                                 <span class=""><img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20"></span>
 
@@ -274,6 +274,9 @@
                         @endif
                     </ul> 
                 </div>
+                <div class="col-md-12 text-center">
+                <button type="submit" name="submit" class="btn btn-primary btn-lg text-center bulk-submit" style="margin-top: 50px;">se alt produkt</button>
+                </div>
             </div>
         </section>
 
@@ -281,25 +284,31 @@
 
         <section class="about" id="about">
 
+IKKE VÆR REDD FOR Å KLAGE PÅ TJENESTEN VÅR
 
             <div class="about-chef section">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 text-center">
-                            <h2 class="main-heading inverse">Quality<span>Quarantee</span>
-                                <span class="main-heading-decor">
+                            <h2 class="main-heading inverse"> Kvalitetsgaranti<span></span>
+                               <!--  <span class="main-heading-decor">
                                     <span class=""><img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20"></span>
 
                                     <span class="">
                                     <img class="wow fadeInUp js-rotate" data-wow-delay=".4s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20"></span>
 
                                     <span class=""><img class="wow fadeInUp js-rotate" data-wow-delay=".6s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20"></span>
-                                </span>
+                                </span> -->
                             </h2>
-                            <h3 class="wow fadeInDown">Aloki</h3>
-                            <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <a class="btn btn-default btn-lg" href="#"  data-toggle="modal" data-target="#about-01">more</a>
+                            <br><br><br>
+                           <!--  <h3 class="wow fadeInDown">Aloki</h3> -->
+                            <p class="wow fadeInUp">Jeg er misfornøyd med smak</p>
+                            <p class="wow fadeInUp">Jeg fant ben i fisken som skulle være benfri</p>
+                            <p class="wow fadeInUp">Jeg synes produktet deres var dyrt</p>
+                            <p class="wow fadeInUp">Jeg er misfornøyd med selgers oppførsel</p>
+                            <p class="wow fadeInUp">Jeg angrer mitt kjøp</p>
+
+                         <!--    <a class="btn btn-default btn-lg" href="#"  data-toggle="modal" data-target="#about-01">more</a> -->
                         </div>
                     </div>
 
@@ -1043,7 +1052,7 @@
  -->
         
 
-        <section id="reviews" class="testimonials section">
+        <!-- <section id="reviews" class="testimonials section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -1131,7 +1140,7 @@
                 </div>
             </div>
         </section>
-
+ -->
     
          
 

@@ -18,9 +18,9 @@ jQuery(function($) {
 
     $win.on("scroll", function() {
         if ($(this).scrollTop() > winH - 140) {
-            $nav.addClass("navbar-fixed-active");
+            //$nav.addClass("navbar-fixed-active");
         } else {
-            $nav.removeClass("navbar-fixed-active");
+            //$nav.removeClass("navbar-fixed-active");
         }
     }).on("resize", function() { // If the user resizes the window
         winH = $(this).height(); // you'll need the new height value

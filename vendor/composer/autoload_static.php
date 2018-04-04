@@ -357,6 +357,8 @@ class ComposerStaticInitf145b869c192d5312ffa7c09b89ba2ed
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Model\\BulkOrder' => __DIR__ . '/../..' . '/app/Model/BulkOrder.php',
         'App\\Model\\ContactUs' => __DIR__ . '/../..' . '/app/Model/ContactUs.php',
+        'App\\Model\\Order' => __DIR__ . '/../..' . '/app/Model/Order.php',
+        'App\\Model\\OrderProduct' => __DIR__ . '/../..' . '/app/Model/OrderProduct.php',
         'App\\Model\\Product' => __DIR__ . '/../..' . '/app/Model/Product.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
