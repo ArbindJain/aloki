@@ -249,7 +249,7 @@
                                     <span class="menu-list-item-title">
                                         <span class="menu-list-item-name">{{ $product->name }}</span>
                                         <span class="menu-list-item-price-row">
-                                            <span class="menu-list-item-price">KR.<strike class="text-danger">{{ number_format($product->old_price, 2, '.', ',') }}</strike>&nbsp;{{ number_format($product->price, 2, '.', ',') }}
+                                            <span class="menu-list-item-price">KR.<del class="text-danger">{{ number_format($product->old_price, 2, '.', ',') }}</del>&nbsp;{{ number_format($product->price, 2, '.', ',') }}
                                                 <span>1 kg</span>
                                             </span>
                                         </span>
