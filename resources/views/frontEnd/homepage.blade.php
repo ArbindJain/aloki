@@ -255,12 +255,12 @@
                         </h1>
                         <div class="corner-ribbon top-left sticky red shadow">Hjemlevering!!</div>
                         <div class="row" style="margin-top: 100px;  " >
-     <div class="service_" >
+     <div class="service_ col-md-10 col-md-offset-1" >
        <div class="col-md-4">
         <div class="box">
         <div class="box_con">
             <i class="fas fa-truck fa-3x" style="color:#c19c62;"></i><br><br>
-         <span class="box_title">Fri Frakt</span> <br>i Oslo
+         <span class="box_title">Fri Frakt</span> <br><span class="box-1">i Oslo</span>
          </div>
          <div class="circle hidden-xs"><span class="delivery"></span></div>
         </div>
@@ -278,7 +278,7 @@
         <div class="box">
         <div class="box_con">
             <i class="fas fa-thumbs-up fa-3x" style="color:#c19c62;"></i><br><br>
-         <span class="box_title">100% KVALITETSGARANTI</span><br>TA VARE PÅ KVITTERINGEN <br>&nbsp;
+         <span class="box_title" >100% KVALITETSGARANTI</span><br><span class="box-1">TA VARE PÅ KVITTERINGEN </span><br>&nbsp;
          </div>
          <div class="circle hidden-xs"><span class="guarantee"></span></div>
         </div>
@@ -287,7 +287,7 @@
         <div class="box">
         <div class="box_con">
             <i class="fas fa-boxes fa-3x" style="color:#c19c62;"></i><br><br>
-         <span class="box_title">GOD KAPASITET</span> <br>levering uansett størrelse
+         <span class="box_title" >GOD KAPASITET</span> <br><span class="box-1">levering uansett størrelse</span>
          </div>
          <div class="circle hidden-xs"><span class="bulk"></span></div>
         </div>
@@ -380,8 +380,8 @@
                                             </span>
                                         </span>
                                     </span>
-                                    <span>{{ $product->description }}</span>
                                     <div class="cartDiv">
+                                    <span class="menu-list-item-title" style="">{{ $product->description }}</span>
                                         <span class="menu-list-item-title">
                                             <span class="menu-list-item-name">Mengde :
                                                 <input type="hidden" class="productId" name="productId" value="{{ $product->id }}">
