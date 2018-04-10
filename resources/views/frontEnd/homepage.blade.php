@@ -381,7 +381,7 @@
                                         </span>
                                     </span>
                                     <div class="cartDiv">
-                                    <span class="menu-list-item-title" style="">{{ $product->description }}</span>
+                                    <span class="" style="">{{ $product->description }}</span>
                                         <span class="menu-list-item-title">
                                             <span class="menu-list-item-name">Mengde :
                                                 <input type="hidden" class="productId" name="productId" value="{{ $product->id }}">
