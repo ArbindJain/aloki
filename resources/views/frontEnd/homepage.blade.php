@@ -26,13 +26,14 @@
   top: 25px;
   left: -50px;
   text-align: center;
-  line-height: 50px;
+  line-height: 56px;
   letter-spacing: 1px;
   color: #f0f0f0;
   text-shadow: none;
   font-weight: bold;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+  font-size: 18px;
 }
 
 /* Custom styles */
@@ -48,8 +49,8 @@
 /* Different positions */
 
 .corner-ribbon.top-left{
-  top: 115px;
-  left: -150px;
+  top: 135px;
+  left: -130px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
@@ -113,7 +114,7 @@
                     <ul class="nav navbar-nav">
                         <!-- <li><a href="#">home</a></li> -->
                         <!-- <li><b href="" style="font-size: 14px; color: red;">Hjemlevering **  &nbsp;</b></li> -->
-                        <li><a href="#product" style="font-size: 14px">Produckter</a></li>
+                        <li><a href="#product" style="font-size: 14px">Produkter</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#bulk-order" style="font-size: 14px">Bedriftskunde</a></li>
                         <li><a href="#about" style="font-size: 14px">Kvalitetsgaranti</a></li>
                         <li><a href="#contact" style="font-size: 14px">Kontakt oss</a></li>
@@ -351,7 +352,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="main-heading "><!-- Recomendation --> <span>Produckter</span>
+                        <h2 class="main-heading "><!-- Recomendation --> <span>Produkter</span>
                             <p style="font-size: 16px; margin-top: 12px;">Du får se varene ved levering før du betale</p>
                             <span class="main-heading-decor">
                                 <span class=""><img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20"></span>
