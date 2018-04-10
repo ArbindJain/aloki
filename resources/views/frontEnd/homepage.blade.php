@@ -174,7 +174,7 @@
                         </h1>
                         <div class="row" style="margin-top: 100px;  " >
      <div class="service_" >
-       <div class="col-md-3">
+       <div class="col-md-4">
         <div class="box">
         <div class="box_con">
             <i class="fas fa-truck fa-3x" style="color:#c19c62;"></i><br><br>
@@ -183,7 +183,7 @@
          <div class="circle hidden-xs"><span class="delivery"></span></div>
         </div>
        </div>
-       <div class="col-md-3">
+      <!--  <div class="col-md-3">
         <div class="box">
         <div class="box_con">
             <i class="fas fa-phone fa-3x" style="color:#c19c62;"></i><br><br>
@@ -191,17 +191,17 @@
          </div>
          <div class="circle hidden-xs"><span class="support"></span></div>
         </div>
-       </div>
-       <div class="col-md-3">
+       </div> -->
+       <div class="col-md-4">
         <div class="box">
         <div class="box_con">
             <i class="fas fa-thumbs-up fa-3x" style="color:#c19c62;"></i><br><br>
-         <span class="box_title">100% KVALITETSGARANTI</span> <br>&nbsp;
+         <span class="box_title">100% KVALITETSGARANTI</span><br>TA VARE PÅ KVITTERINGEN <br>&nbsp;
          </div>
          <div class="circle hidden-xs"><span class="guarantee"></span></div>
         </div>
        </div>
-       <div class="col-md-3">
+       <div class="col-md-4">
         <div class="box">
         <div class="box_con">
             <i class="fas fa-boxes fa-3x" style="color:#c19c62;"></i><br><br>
@@ -271,6 +271,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="main-heading "><!-- Recomendation --> <span>Produckter</span>
+                            <p style="font-size: 16px; margin-top: 12px;">Du får se varene ved levering før du betale</p>
                             <span class="main-heading-decor">
                                 <span class=""><img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20"></span>
 
@@ -347,12 +348,12 @@
                             </h2>
                             <br><br><br>
                            <!--  <h3 class="wow fadeInDown">Aloki</h3> -->
-                            <p class="wow fadeInUp" style="font-size: 24px!important;">Jeg er misfornøyd med smak</p>
-                            <p class="wow fadeInUp" style="font-size: 24px!important;">Jeg fant ben i fisken som skulle være benfri</p>
-                            <p class="wow fadeInUp" style="font-size: 24px!important;">Jeg synes produktet deres var dyrt</p>
+                            <p class="wow fadeInUp" style="font-size: 24px!important;">Vi gir 100% fornøydgaranti på alle våre varer så lenge du som kunde kontakter oss innen 14 dager fra handledatoen og har kvittering. </p>
+                            <p class="wow fadeInUp" style="font-size: 24px!important;">Vennligst send en skriftlig klage til Post@aloki.no</p>
+                            <!-- <p class="wow fadeInUp" style="font-size: 24px!important;">Jeg synes produktet deres var dyrt</p>
                             <p class="wow fadeInUp" style="font-size: 24px!important;">Jeg er misfornøyd med selgers oppførsel</p>
                             <p class="wow fadeInUp" style="font-size: 24px!important;">Jeg angrer mitt kjøp</p>
-
+ -->
                          <!--    <a class="btn btn-default btn-lg" href="#"  data-toggle="modal" data-target="#about-01">more</a> -->
                         </div>
                     </div>
@@ -1254,38 +1255,27 @@
                     </div>
                 </div>
             </div>
-
+<!-- 
             <div class="google-maps">
                 <div id="map-canvas"></div>
-            </div>
-        </section>
+            </div> -->
 
-        <footer class="footer section">
+        </section>
+        <footer class="footer section" style="background-color: #000; color: #fff;">
             <div class="container">
                 <div class="row">
-                    <div class="social">
-                        <ul>
-                            <li class="wow fadeInDown" data-wow-delay="0.2s">
-                                <a href="http://facebook.com/" target="_blank"><span class="ti-facebook"></span></a>
-                            </li>
-                            
-                            <li class="wow fadeInDown" data-wow-delay="0.4s">
-                                <a href="https://twitter.com/" target="_blank"><span class="ti-twitter-alt"></span></a>
-                            </li>
-                            
-                            <li class="wow fadeInDown" data-wow-delay="0.6s">
-                                <a href="http://linkedin.com/" target="_blank"><span class="ti-linkedin"></span></a>
-                            </li>
-                        </ul>
-                    </div>
+                    
 
+                        
 
                     <div class="col-md-12 text-center">
-                        <img class="footer-logo" src="{{ asset('frontEnd/img/logo.png') }}" alt="footer-logo">
+                        <p>ADR- Hallagerbakken 10c 1256 Islo <br>Oslo <br> 96961234 <br> post@aloki.no<br>Copyright © Aloki</p>
+                        <!-- <img class="footer-logo" src="{{ asset('frontEnd/img/logo.png') }}" alt="footer-logo"> -->
                     </div>
-                </div>
             </div>
+        </div>
         </footer>
+        
       
         <script data-cfasync="false" src="http://thymetheme.pl/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script>
         <script src="{{ asset('frontEnd/js/vendor/wow.js') }}"></script>
