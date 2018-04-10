@@ -35,8 +35,8 @@
                         <!-- <li><a href="#">home</a></li> -->
                         <li><b href="" style="font-size: 14px; color: red;">Hjemlevering **  &nbsp;</b></li>
                         <li><a href="#product" style="font-size: 14px">Produkt</a></li>
-                        <li><a href="#about" style="font-size: 14px">Bedriftskunde</a></li>
-                        <li><a href="#news" style="font-size: 14px">Kvalitetsgaranti</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#bulk-order" style="font-size: 14px">Bedriftskunde</a></li>
+                        <li><a href="#about" style="font-size: 14px">Kvalitetsgaranti</a></li>
                         <li><a href="#contact" style="font-size: 14px">Kontakt oss</a></li>
                         <li>
                             <a href="#" id="cartShow">
@@ -57,6 +57,47 @@
             <div class="modal-dialog">
                 <div class="modal-content" id="cart-table">
                     
+                </div>
+            </div>
+        </div>
+        <!-- Bulkorder Modal -->
+        <div class="modal fade" id="bulk-order" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="">
+                        <div class="col-md-12">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h2 class="modal-title text-center">Fill details</h2>
+                        </div>
+                        <div class="col-md-8 col-md-push-2">
+                            <div class="contact-form">
+                                <form role="form" id="bulk-order-form" action="" method="">
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <select name="product" id="product-dropdown" class="form-control">
+                                            <option value="" selected disabled> -- Inquiry for -- </option>
+                                            @foreach($products as $product)
+                                                <option value="{{ $product->name }}">{{ $product->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="name" placeholder="Name" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="email" placeholder="Email" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="phone" placeholder="Phone Number" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="address" placeholder="Address" required />
+                                    </div>
+                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="bulk-submit">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -208,7 +249,7 @@
                                     <span class="menu-list-item-title">
                                         <span class="menu-list-item-name">{{ $product->name }}</span>
                                         <span class="menu-list-item-price-row">
-                                            <span class="menu-list-item-price">KR. {{ number_format($product->price, 2, '.', ',') }}
+                                            <span class="menu-list-item-price">KR.<strike class="text-danger">{{ number_format($product->old_price, 2, '.', ',') }}</strike>&nbsp;{{ number_format($product->price, 2, '.', ',') }}
                                                 <span>1 kg</span>
                                             </span>
                                         </span>
@@ -229,45 +270,8 @@
                                             </span>
                                         </span>
                                         <span class="menu-list-item-ingridients">
-                                            <a id="bulk-order-{{ $product->id }}" class="btn btn-sm btn-success pull-left" data-toggle="modal" data-target="#bulk-order-details-{{ $product->id }}">Bulk order Inquiry</a>
                                             <a class="btn btn-sm btn-success pull-right cart-submit" href="{{ route('cartAdd', $product->id) }}">Add to Cart</a>
                                         </span>
-                                        <!-- Modal -->
-                                        <div class="modal fade bulk-order-model" id="bulk-order-details-{{ $product->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="">
-                                                        <div class="col-md-12">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                            <h2 class="modal-title text-center">Fill details</h2>
-                                                        </div>
-                                                        <div class="col-md-8 col-md-push-2">
-                                                            <div class="contact-form">
-                                                                <form role="form" action="" method="">
-                                                                    {{ csrf_field() }}
-                                                                    <div class="form-group">
-                                                                        <input type="text" class="form-control" name="name" placeholder="Name" required />
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <input type="text" class="form-control" name="email" placeholder="Email" required />
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <input type="text" class="form-control" name="phone" placeholder="Phone Number" required />
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <input type="text" class="form-control" name="address" placeholder="Address" required />
-                                                                    </div>
-                                                                    <div>
-                                                                        <input type="hidden" name="item" value="{{ $product->name }}" required />
-                                                                    </div>
-                                                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center bulk-submit">Submit</button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </li>
                             @endforeach

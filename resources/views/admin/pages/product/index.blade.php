@@ -26,6 +26,7 @@
                         <th>Description</th>
                         <th>Image</th>
                         <th>Price</th>
+                        <th>Old Price</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -38,8 +39,9 @@
                             <td>{{ $product->description }}</td>
                             <td><img class="img-responsive text-center " src="{{ asset('images/products').'/'.$product->image }}" alt="{{ $product->image }}" style="width:60px; height: auto; margin:auto; border: 1px solid #DDD;"></td>
                             <td>{{ $product->price }}</td>
-                            <td><a href="{{ route('product.edit', $product->id) }}"><span class="fa fa-edit"></span></td>
-                            <td>
+                            <td>{{ $product->old_price }}</td>
+                            <td class="text-center"><a href="{{ route('product.edit', $product->id) }}"><span class="fa fa-edit"></span></td>
+                            <td class="text-center">
                                 <form id="delete-form-{{ $product->id }}" method="POST" action="{{ route('product.destroy', $product->id) }}" style="display: none;">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}

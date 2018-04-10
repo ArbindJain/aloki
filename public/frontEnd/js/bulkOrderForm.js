@@ -2,15 +2,15 @@
 $(document).ready(function() {
 
     //Ajax when bulk order submit
-    $('body').on('click', '.bulk-submit', function(event){
+    $('body').on('click', '#bulk-submit', function(event){
         event.preventDefault();
 
-        var parentROW = $(this).parents(".bulk-order-model");
+        var parentROW = $(this).parents("#bulk-order-form");
         name = parentROW.find('input[name="name"]').val();
         email = parentROW.find('input[name="email"]').val();
         phone = parentROW.find('input[name="phone"]').val();
         address = parentROW.find('input[name="address"]').val();
-        item = parentROW.find('input[name="item"]').val();
+        item = parentROW.find('select[name="product"]').val();
         _token =  $('input[name="_token"]').val();
 
         if(name == "") {
@@ -31,7 +31,7 @@ $(document).ready(function() {
                 data: formData,
                 dataType: "json",
                 success: function (data) {
-                    parentROW.modal('hide');
+                    $('#bulk-order').modal('hide');
                     jQuery("#submit-model").modal('show');
                     $("#contact-us-response").html(data);
                 },
