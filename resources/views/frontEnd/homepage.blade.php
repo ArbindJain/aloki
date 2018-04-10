@@ -16,6 +16,82 @@
         <link rel="stylesheet" href="{{ asset('frontEnd/css/own.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Lato:300i,400" rel="stylesheet"> 
         <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+        <style type="text/css">
+            /* The ribbons */
+
+.corner-ribbon{
+  width: 400px;
+  background: #e43;
+  position: absolute;
+  top: 25px;
+  left: -50px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  text-shadow: none;
+  font-weight: bold;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+/* Custom styles */
+
+.corner-ribbon.sticky{
+  position: fixed;
+}
+
+.corner-ribbon.shadow{
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+/* Different positions */
+
+.corner-ribbon.top-left{
+  top: 115px;
+  left: -150px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.corner-ribbon.top-right{
+  top: 25px;
+  right: -50px;
+  left: auto;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.corner-ribbon.bottom-left{
+  top: auto;
+  bottom: 25px;
+  left: -50px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.corner-ribbon.bottom-right{
+  top: auto;
+  right: -50px;
+  bottom: 25px;
+  left: auto;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+/* Colors */
+
+.corner-ribbon.white{background: #f0f0f0; color: #555;}
+.corner-ribbon.black{background: #333;}
+.corner-ribbon.grey{background: #999;}
+.corner-ribbon.blue{background: #39d;}
+.corner-ribbon.green{background: #2c7;}
+.corner-ribbon.turquoise{background: #1b9;}
+.corner-ribbon.purple{background: #95b;}
+.corner-ribbon.red{background: #e43;}
+.corner-ribbon.orange{background: #e82;}
+.corner-ribbon.yellow{background: #ec0;}
+        </style>
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="50" style="font-family: 'Lato', sans-serif!important;">
@@ -154,10 +230,14 @@
          </div> -->
      
         <section class="home image-slider">
+
             <div class="home-slider text-center">
                 <div class="swiper-wrapper">
+
                     <div class="swiper-slide" style="background: url('frontEnd/img/h5.jpg');">
+
                        <h1 class="main-heading inverse" style="color:#00008b;">velkommen til aloki<span style="font-size: 22px; color:#00008b;">LEVERANDØR AV SJØMAT TIL BEDRIFTER OG PRIVATKUNDER</span>
+
                             <!-- <span class="main-heading-decor">                          
                                 <span class="">
                                     <img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20">
@@ -172,6 +252,7 @@
                                 </span>
                             </span> -->
                         </h1>
+                        <div class="corner-ribbon top-left sticky red shadow">Hjemlevering!!</div>
                         <div class="row" style="margin-top: 100px;  " >
      <div class="service_" >
        <div class="col-md-4">
