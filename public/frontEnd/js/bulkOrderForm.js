@@ -31,6 +31,7 @@ $(document).ready(function() {
                 data: formData,
                 dataType: "json",
                 success: function (data) {
+                    $('#bulk-order-form')[0].reset();
                     $('#bulk-order').modal('hide');
                     jQuery("#submit-model").modal('show');
                     $("#contact-us-response").html(data);

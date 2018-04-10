@@ -13,13 +13,13 @@ $(document).ready(function() {
         if (!isNaN(quantityValue)) {
             if(type == 'minus') {
                 if(quantityValue > input.attr('min')) {
-                    input.val(quantityValue - 1).change();
+                    input.val(quantityValue - 5).change();
                 } 
                 if(parseInt(input.val()) == input.attr('min')) {
                     $(this).attr('disabled', true);
                 }
             } else if(type == 'plus') {
-                    input.val(quantityValue + 1).change();
+                    input.val(quantityValue + 5).change();
             }
         } else {
             input.val(0);
@@ -37,7 +37,7 @@ $(document).ready(function() {
         if(valueCurrent >= minValue) {
             $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
         } else {
-            alert('Sorry, the minimum value was reached');
+            alert('Sorry, the minimum value should be multiple to 5');
             $(this).val($(this).data('oldValue'));
         }
     });

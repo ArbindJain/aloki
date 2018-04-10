@@ -297,11 +297,12 @@
                                             </span>
                                         </span>
                                     </span>
+                                    <span>{{ $product->description }}</span>
                                     <div class="cartDiv">
                                         <span class="menu-list-item-title">
                                             <span class="menu-list-item-name">Mengde :
                                                 <input type="hidden" class="productId" name="productId" value="{{ $product->id }}">
-                                                <input type="number" class="form-control quiantityValue" name="quant[1]" value="1" min="1" style="display: inline-block; width: 75px;">Kg
+                                                <input type="number" class="form-control quiantityValue" name="quant[1]" step="5" value="5" min="5" style="display: inline-block; width: 75px;">Kg
                                             </span>
                                             <span class="menu-list-item-price-row">
                                                 <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">

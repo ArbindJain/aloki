@@ -2,31 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Model\Product;
-use App\Model\OrderProduct;
 use App\Model\Order;
+use App\Model\OrderProduct;
+use App\Model\Product;
+use App\Rules\DivisibleBy5;
+use Illuminate\Http\Request;
 use Cart;
+use Validator;
 
 class CartController extends Controller
 {
 	/**
-     * Add ptoduct to cart.
+     * Add product to cart.
      *
      */
     public function addItemToCart(Request $request)
     {
-    	$product = Product::where('id', $request->productId)->first();
+    	$validator = Validator::make($request->all(), [
+            'quantityValue' => ['required', new DivisibleBy5],
+        ]);
 
-    	Cart::add($product->id, $product->name, $request->quantityValue, $product->price);
+        if ($validator->fails()) {
+        	return response()->json(['status'=>'The quantity should be multiple to 5']);
 
-    	return response()->json([
-		    "status" => "Item added",
-		    "cart" => [
-		    	"cartItem" => Cart::count(),
-		    	"cartTotal" => Cart::total(),
-		    ]
-		], 200);
+        } else {
+
+	    	$product = Product::where('id', $request->productId)->first();
+
+	    	Cart::add($product->id, $product->name, $request->quantityValue, $product->price);
+
+	    	return response()->json([
+			    "status" => "Item added",
+			    "cart" => [
+			    	"cartItem" => Cart::count(),
+			    	"cartTotal" => Cart::total(),
+			    ]
+			], 200);
+        }
     }
 
     /**
