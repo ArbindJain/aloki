@@ -331,8 +331,6 @@
 
         <section class="about" id="about">
 
-IKKE VÆR REDD FOR Å KLAGE PÅ TJENESTEN VÅR
-
             <div class="about-chef section">
                 <div class="container">
                     <div class="row">
