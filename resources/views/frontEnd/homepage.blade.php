@@ -13,9 +13,12 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700%7CAlex+Brush%7CPhilosopher:400,700,900" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('frontEnd/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('frontEnd/css/theme.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontEnd/css/own.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300i,400" rel="stylesheet"> 
+        <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     </head>
 
-    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <body data-spy="scroll" data-target=".navbar" data-offset="50" style="font-family: 'Lato', sans-serif!important;">
         <nav class="navbar navbar-fixed-top shadow navbar-fixed-active" id="js-nav">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -33,15 +36,15 @@
                 <div class=" navbar " id="">
                     <ul class="nav navbar-nav">
                         <!-- <li><a href="#">home</a></li> -->
-                        <li><b href="" style="font-size: 14px; color: red;">Hjemlevering **  &nbsp;</b></li>
+                        <!-- <li><b href="" style="font-size: 14px; color: red;">Hjemlevering **  &nbsp;</b></li> -->
                         <li><a href="#product" style="font-size: 14px">Produkt</a></li>
                         <li><a href="#about" style="font-size: 14px">Bedriftskunde</a></li>
                         <li><a href="#news" style="font-size: 14px">Kvalitetsgaranti</a></li>
                         <li><a href="#contact" style="font-size: 14px">Kontakt oss</a></li>
                         <li>
                             <a href="#" id="cartShow">
-                                <span class="glyphicon glyphicon-shopping-cart"></span>
-                                <span id="cartData">
+                                <span class="glyphicon glyphicon-shopping-cart" style="font-size: 18px;"></span>
+                                <span id="cartData" style="color: red;">
                                     @if(Cart::count() > 0)
                                         {{ Cart::count() }} Elementer - KR.{{ Cart::total() }}
                                     @endif
@@ -112,8 +115,8 @@
         <section class="home image-slider">
             <div class="home-slider text-center">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background: url('frontEnd/img/h1.jpg');">
-                       <h1 class="main-heading inverse">velkommen til aloki<span>Norges beste fiskeforretning online</span>
+                    <div class="swiper-slide" style="background: url('frontEnd/img/h5.jpg');">
+                       <h1 class="main-heading inverse" style="color:#00008b;">velkommen til aloki<span style="font-size: 22px; color:#00008b;">LEVERANDØR AV SJØMAT TIL BEDRIFTER OG PRIVATKUNDER</span>
                             <!-- <span class="main-heading-decor">                          
                                 <span class="">
                                     <img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20">
@@ -128,7 +131,47 @@
                                 </span>
                             </span> -->
                         </h1>
-
+                        <div class="row" style="margin-top: 100px;  " >
+     <div class="service_" >
+       <div class="col-md-3">
+        <div class="box">
+        <div class="box_con">
+            <i class="fas fa-truck fa-3x" style="color:#c19c62;"></i><br><br>
+         <span class="box_title">Fri Frakt</span> <br>i Oslo
+         </div>
+         <div class="circle hidden-xs"><span class="delivery"></span></div>
+        </div>
+       </div>
+       <div class="col-md-3">
+        <div class="box">
+        <div class="box_con">
+            <i class="fas fa-phone fa-3x" style="color:#c19c62;"></i><br><br>
+         <span class="box_title">KUNDESERVICE</span><br>man-fre kl 08 - 16
+         </div>
+         <div class="circle hidden-xs"><span class="support"></span></div>
+        </div>
+       </div>
+       <div class="col-md-3">
+        <div class="box">
+        <div class="box_con">
+            <i class="fas fa-thumbs-up fa-3x" style="color:#c19c62;"></i><br><br>
+         <span class="box_title">100% KVALITETSGARANTI</span> <br>&nbsp;
+         </div>
+         <div class="circle hidden-xs"><span class="guarantee"></span></div>
+        </div>
+       </div>
+       <div class="col-md-3">
+        <div class="box">
+        <div class="box_con">
+            <i class="fas fa-boxes fa-3x" style="color:#c19c62;"></i><br><br>
+         <span class="box_title">GOD KAPASITET</span> <br>levering uansett størrelse
+         </div>
+         <div class="circle hidden-xs"><span class="bulk"></span></div>
+        </div>
+       </div>
+      </div>
+      <div class="clearfix"></div>
+   </div>
                         <!-- <h2 class="home-slider-title-main">100% fresh</h2>
                         <div class="home-slider-title-small" >Lorem ipsum dolor sit amet, consectetur adipisicing</div>
 
@@ -1231,36 +1274,9 @@ IKKE VÆR REDD FOR Å KLAGE PÅ TJENESTEN VÅR
                             <li class="wow fadeInDown" data-wow-delay="0.6s">
                                 <a href="http://linkedin.com/" target="_blank"><span class="ti-linkedin"></span></a>
                             </li>
-                            
-                            <!-- <li class="wow fadeInDown" data-wow-delay="0.8s">
-                                <a href="https://vimeo.com/" target="_blank"><span class="ti-vimeo-alt"></span></a>
-                            </li>
-                            
-                            <li class="wow fadeInDown" data-wow-delay="1s">
-                                <a href="http://youtube.com/" target="_blank"><span class="ti-youtube"></span></a>
-                            </li> -->
                         </ul>
                     </div>
 
-                    <!-- <div class="col-md-4 col-md-offset-4 col-sm-12">
-                        <div class="footer-newsletter">
-                            <div class="center text-center">
-                                <h3>stay tuned</h3>
-
-                                <div class="wow fadeInUp">
-                                    <p>Subscribe to our weekly newsletter</p>
-                                    <form action="#" method="post">
-                                        <div class="input-group">
-                                            <input class="form-control" type="text" placeholder="e-mail">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-default" type="button"><span class="ti-arrow-right"></span></button>
-                                            </span>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
 
                     <div class="col-md-12 text-center">
                         <img class="footer-logo" src="{{ asset('frontEnd/img/logo.png') }}" alt="footer-logo">

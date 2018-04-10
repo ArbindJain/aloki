@@ -1,0 +1,13 @@
+.box_con{
+
+	text-shadow: none!important;
+
+	color: #00008b;
+}
+.box_title {
+	font-size: 18px;
+	color: #00008b;
+	font-style: bold;
+	font-weight: bold;
+	text-shadow: none!important;
+}
