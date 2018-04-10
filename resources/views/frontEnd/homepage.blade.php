@@ -477,7 +477,7 @@
 
 
 
-            <div class="container">
+        <!--     <div class="container">
                 <div class="row">
                     <div class="about-row section">
                         <div class="col-md-6 text-center">
@@ -496,9 +496,9 @@
 - Du får se varene ved levering før du betaler<br>
 - Gratis levering
 
-                            </p>
+                            </p> -->
                            <!--  <a class="btn btn-primary btn-lg" href="#menu">our products</a> -->
-                        </div>
+                      <!--   </div>
 
                         <div class="col-md-6 col-xs-12 about-photo">
                             <img class="col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.2s" alt="about photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkXphlr9_KWwBKDTHpboFCxVlhxOUwRn7vzWNNH2VByTo5bRiHsA">
@@ -506,7 +506,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
            
             <!-- <div class="about-row about-row-inverse section">
                 <div class="container">
@@ -1352,7 +1352,7 @@
                         
 
                     <div class="col-md-12 text-center">
-                        <p>ADR- Hallagerbakken 10c 1256 Islo <br>Oslo <br> 96961234 <br> post@aloki.no<br>Copyright © Aloki</p>
+                        <p>Hallagerbakken 10c 1256 <br>Oslo <br> telefon - 96961234 <br> post@aloki.no<br>Copyright © Aloki</p>
                         <!-- <img class="footer-logo" src="{{ asset('frontEnd/img/logo.png') }}" alt="footer-logo"> -->
                     </div>
             </div>

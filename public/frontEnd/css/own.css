@@ -6,15 +6,16 @@
 	color: #00008b;
 }
 .box_title {
-	background-color: #fff;
-	opacity: 0.7;
+	/*background-color: #fff;
+	opacity: 0.7;*/
 	font-size: 18px;
 	color: #00008b;
 	font-style: bold;
 	font-weight: 900;
-	text-shadow: none!important;
+	text-shadow: 1px 1px black; 
 }
 .box-1 {
-	background-color: #fff;
-	opacity: 0.7;
+	/*background-color: #fff;
+	opacity: 0.7;*/
+	text-shadow: 1px 1px black; 
 }
