@@ -37,6 +37,11 @@
 									<label for="price">Price</label>
 									<input type="number" step="0.01" class="form-control" name="price" id="price" placeholder="Price">
 								</div>
+								<!-- Old price -->
+								<div class="form-group">
+									<label for="old_price">Old Price</label>
+									<input type="number" step="0.01" class="form-control" name="old_price" id="old_price" placeholder="Old Price">
+								</div>
 								<!-- Image Upload -->
 								<div class="form-group">
 									<label for="image">Image</label>
