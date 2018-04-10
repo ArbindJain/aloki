@@ -37,7 +37,7 @@
                     <ul class="nav navbar-nav">
                         <!-- <li><a href="#">home</a></li> -->
                         <!-- <li><b href="" style="font-size: 14px; color: red;">Hjemlevering **  &nbsp;</b></li> -->
-                        <li><a href="#product" style="font-size: 14px">Produkt</a></li>
+                        <li><a href="#product" style="font-size: 14px">Produckter</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#bulk-order" style="font-size: 14px">Bedriftskunde</a></li>
                         <li><a href="#about" style="font-size: 14px">Kvalitetsgaranti</a></li>
                         <li><a href="#contact" style="font-size: 14px">Kontakt oss</a></li>
@@ -142,7 +142,7 @@
             </div>
         </div>
 
-         <div class="load">
+         <!-- <div class="load">
              <div class="load-container">
                  <span class="load-green" style="font-size: 60px;">A</span>
                  <span class="load-white " style="font-size: 60px;">L</span>
@@ -151,7 +151,7 @@
                  <span class="load-white " style="font-size: 60px;">I</span>
                  <span class="load-text">loading</span>
              </div>
-         </div>
+         </div> -->
      
         <section class="home image-slider">
             <div class="home-slider text-center">
@@ -270,7 +270,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="main-heading "><!-- Recomendation --> <span>produkt</span>
+                        <h2 class="main-heading "><!-- Recomendation --> <span>Produckter</span>
                             <span class="main-heading-decor">
                                 <span class=""><img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20"></span>
 
