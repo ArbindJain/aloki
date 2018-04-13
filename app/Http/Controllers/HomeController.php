@@ -31,16 +31,22 @@ class HomeController extends Controller
             'name'=>'required',
             'email'=>'required|email',
             'phone'=>'required',
-            'address'=>'required',
-            'item'=>'required',
+            'land'=>'required',
+            'tlf'=>'required',
+            'orderFor'=>'required',
         ]);
 
         $bulkOrder = new BulkOrder;
         $bulkOrder->name = $request->name;
-        $bulkOrder->email = $request->email;
         $bulkOrder->phone = $request->phone;
         $bulkOrder->address = $request->address;
-        $bulkOrder->item = $request->item;
+        $bulkOrder->land = $request->land;
+        $bulkOrder->poststed = $request->poststed;
+        $bulkOrder->post_number = $request->post_number;
+        $bulkOrder->email = $request->email;
+        $bulkOrder->tlf = $request->tlf;
+        $bulkOrder->fax = $request->fax;
+        $bulkOrder->order_for = $request->orderFor;
         $bulkOrder->save();
 
         return response()->json("Your inquiry has been submitted successfully");

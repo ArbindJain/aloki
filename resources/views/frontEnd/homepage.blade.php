@@ -147,32 +147,46 @@
                     <div class="">
                         <div class="col-md-12">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h2 class="modal-title text-center">Fill details</h2>
+                            <h3 class="modal-title text-center">PRISFØRESPØRSEL/BESTILLINGSSKJEMA</h3>
                         </div>
                         <div class="col-md-8 col-md-push-2">
-                            <div class="contact-form">
+                            <div class="contact-form" style="margin-bottom: 15px;">
                                 <form role="form" id="bulk-order-form" action="" method="">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <select name="product" id="product-dropdown" class="form-control">
-                                            <option value="" selected disabled> -- Inquiry for -- </option>
-                                            @foreach($products as $product)
-                                                <option value="{{ $product->name }}">{{ $product->name }}</option>
-                                            @endforeach
+                                        <select name="product" id="bulkorder-for" class="form-control">
+                                            <option value="PRISFØRESPØRSEL/TILBUD" selected >PRISFØRESPØRSEL/TILBUD</option>
+                                            <option value="BESTILLINGSSKJEMA">BESTILLINGSSKJEMA</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="name" placeholder="Name" required />
+                                        <input type="text" id="bulkorder-name" class="form-control required-field" name="name" placeholder="Firma *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="email" placeholder="Email" required />
+                                        <input type="text"  id="bulkorder-phone" class="form-control required-field" name="phone" placeholder="Kontakt *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="phone" placeholder="Phone Number" required />
+                                        <input type="text"  id="bulkorder-address" class="form-control" name="address" placeholder="Addresse" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="address" placeholder="Address" required />
+                                        <input type="text" id="bulkorder-land" class="form-control required-field" name="land" placeholder="Land *" required />
                                     </div>
+                                    <div class="form-group">
+                                        <input type="text" id="bulkorder-poststed" class="form-control" name="poststed" placeholder="Poststed" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="bulkorder-post_number" class="form-control" name="post_number" placeholder="Postnummer" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control required-field" id="bulkorder-email" name="email" placeholder="Email *" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control required-field" id="bulkorder-tlf" name="tlf" placeholder="Tlf *" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="bulkorder-fax" name="fax" placeholder="Fax" />
+                                    </div>
+                                    <p style="color: #FF0000">Felt merket med * må fylles ut.</p>
                                     <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="bulk-submit">Submit</button>
                                 </form>
                             </div>
@@ -188,29 +202,36 @@
                     <div class="">
                         <div class="col-md-12">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h2 class="main-title text-center">Fill all details</h2>
+                            <h2 class="main-title text-center">Fullfør bestillingen</h2>
                         </div>
                         <div class="col-md-8 col-md-push-2">
                             <div class="contact-form">
+                                <h4 style="margin: 10px 0px;">PERSONLIGE OPPLYSNINGER OG LEVERINGSADRESSE</h4>
                                 <form id="checkout-form" role="form" action="" method="">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="name" placeholder="Name" required />
+                                        <input type="text" class="form-control required-field" id="checkout-name" name="name" placeholder="Fornavn *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="email" placeholder="Email" required />
+                                        <input type="text" class="form-control required-field" id="checkout-etternavn" name="etternavn" placeholder="Etternavn *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="phone" placeholder="Phone Number" required />
+                                        <input type="email" class="form-control required-field" id="checkout-email" name="email" placeholder="Epost *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="address" placeholder="Address" required />
+                                        <input type="text" class="form-control required-field" id="checkout-address" name="address" placeholder="Adresse *" required />
                                     </div>
-                                    <div>
-                                        {{-- <input type="hidden" name="item" value="{{ $product->name }}" required /> --}}
+                                    <div class="form-group">
+                                        <input type="text" class="form-control required-field" id="checkout-postnr" name="postnr" placeholder="Postnr *" required />
                                     </div>
-                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="order-confirm" onclick="confirm('Once order confirmed, can not be changed')">Confirm</button>
-                                    <span class="text-danger">c.o.d. only</span>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control required-field" id="checkout-sted" name="sted" placeholder="Sted *" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control required-field" id="checkout-phone" name="phone" placeholder="Telefon *" required />
+                                    </div>
+                                    <p style="color: #FF0000">Fyll inn felter merket med *</p>
+                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="order-confirm">Confirm</button>
                                 </form>
                             </div>
                         </div>
@@ -397,7 +418,7 @@
                                             </span>
                                         </span>
                                         <span class="menu-list-item-ingridients">
-                                            <a class="btn btn-sm btn-success pull-right cart-submit" href="{{ route('cartAdd', $product->id) }}">Add to Cart</a>
+                                            <a class="btn btn-sm btn-success pull-right cart-submit" href="{{ route('cartAdd', $product->id) }}">KJØP PRODUKT</a>
                                         </span>
                                     </div>
                                 </li>
@@ -1299,19 +1320,19 @@
                             <form id="contact-us-form" method="" action="">
                                 {{ csrf_field() }}
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Navn" required />
+                                    <input type="text" class="form-control" id="contact-name" name="name" placeholder="Navn" required />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="email" name="email" placeholder="E-post" required />
+                                    <input type="email" class="form-control" id="contact-email" name="email" placeholder="E-post" required />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefonnummer" required />
+                                    <input type="text" class="form-control" id="contact-phone" name="phone" placeholder="Telefonnummer" required />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Emne" required />
+                                    <input type="text" class="form-control" id="contact-subject" name="subject" placeholder="Emne" required />
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Budskap" rows="7"></textarea>
+                                    <textarea class="form-control" id="contact-message" name="message" placeholder="Budskap" rows="7"></textarea>
                                 </div>
 
                                 <button type="button" id="contact-submit" name="submit" class="btn btn-primary btn-lg text-center">send inn meldingen din</button>
@@ -1329,7 +1350,7 @@
                                     </div>
                                     <div class="col-md-8 col-md-push-2">
                                         <div class="contact-form text-center">
-                                            <button type="submit" name="submit" class="btn btn-primary btn-lg text-center"  data-dismiss="modal">Close</button>
+                                            <button type="submit" name="submit" class="btn btn-primary btn-lg text-center"  data-dismiss="modal">Ok</button>
                                         </div>
                                     </div>
                                 </div>

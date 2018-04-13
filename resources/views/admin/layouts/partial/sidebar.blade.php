@@ -20,27 +20,18 @@
             <li class="">
                 <a href="{{ route('orders') }}">
                     <i class="fa fa-shopping-bag" aria-hidden="true"></i> <span>Orders</span>
-                    <span class="pull-right-container">
-                        <small class="label pull-right bg-green">1</small>
-                    </span>
                 </a>
             </li>
             <!-- Bulk order -->
             <li class="">
                 <a href="{{ route('bulkOrderData') }}">
                     <i class="fa fa-shopping-bag" aria-hidden="true"></i> <span>Bulk order inquiry</span>
-                    <span class="pull-right-container">
-                        <small class="label pull-right bg-green">1</small>
-                    </span>
                 </a>
             </li>
             <!-- contact us order -->
             <li class="">
                 <a href="{{ route('contactUsData') }}">
                     <i class="fa fa-envelope"></i> <span>Contact us inquiry</span>
-                    <span class="pull-right-container">
-                        <small class="label pull-right bg-green">1</small>
-                    </span>
                 </a>
             </li>
         </ul>

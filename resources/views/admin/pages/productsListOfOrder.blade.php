@@ -43,9 +43,9 @@
                     <tr>
                         <td></td>
                         <td class="text-center">Total</td>
-                        <td>{{ Cart::count() }}</td>
+                        <td>{{ $order->order_items }}</td>
                         <td></td>
-                        <td>{{ Cart::total() }}</td>
+                        <td>{{ $order->order_value }}</td>
                     </tr>
                 </tfoot>
             </table>

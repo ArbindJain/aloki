@@ -1,4 +1,8 @@
-// cart related all jquery ajax
+/*
+ *Here cart related all jquery ajax
+ *
+ */
+
 $(document).ready(function() {
 
     //plus and minus button
@@ -111,43 +115,66 @@ $(document).ready(function() {
     $('body').on('click', '#check-out', function(event) {
         event.preventDefault();
         jQuery("#cart-model").modal('hide');
-        jQuery("#user-checkout").modal('show');
+        $("#cart-model").on("hidden.bs.modal",function(){
+            $('#user-checkout').modal('show')
+        })
     });
 
     //Ajax to confirm order
     $('body').on('click', '#order-confirm', function(event) {
         event.preventDefault();
 
-        var parentROW = $(this).parents("#checkout-form");
-        user_name = parentROW.find('input[name="name"]').val();
-        user_email = parentROW.find('input[name="email"]').val();
-        user_phone = parentROW.find('input[name="phone"]').val();
-        user_address = parentROW.find('input[name="address"]').val();
+        user_name = $('#checkout-name').val();
+        user_etternavn = $('#checkout-etternavn').val();
+        user_email = $('#checkout-email').val();
+        user_address = $('#checkout-address').val();
+        user_postnr = $('#checkout-postnr').val();
+        user_sted = $('#checkout-sted').val();
+        user_phone = $('#checkout-phone').val();
         _token =  $('input[name="_token"]').val();
 
         if(user_name == "") {
-            parentROW.find('input[name="name"]').focus();
-        } else if(user_email == "") {
-            parentROW.find('input[name="email"]').focus();
-        } else if (user_phone == "") {
-            parentROW.find('input[name="phone"]').focus();
+            $('#checkout-name').focus();
+        } else if(user_etternavn == "") {
+            $('#checkout-etternavn').focus();
+        } else if (user_email == "") {
+            $('#checkout-email').focus();
         } else if (user_address == "") {
-            parentROW.find('input[name="address"]').focus();
+            $('#checkout-address').focus();
+        } else if(user_postnr == "") {
+            $('#checkout-postnr').focus();
+        } else if (user_sted == "") {
+            $('#checkout-sted').focus();
+        } else if (user_phone == "") {
+            $('#checkout-phone').focus();
         } else {
-            var formData = {user_name: user_name, user_email: user_email, user_phone: user_phone, user_address: user_address, _token:_token};
-            $.ajax({
-                type: "POST",
-                url: "/order/confirm",
-                data: formData,
-                dataType: "json",
-                success: function (data) {
-                    // $('#checkout-form')[0].reset();
-                    jQuery("#user-checkout").modal('hide');
-                    jQuery("#submit-model").modal('show');
-                    $("#contact-us-response").html(data);
-                    $("#cartData").html('');
-                },
-            });
+            if (confirm('Once order confirmed, can not be changed')) {
+                var formData = {
+                    user_name: user_name,
+                    user_etternavn: user_etternavn,
+                    user_email: user_email,
+                    user_address: user_address,
+                    user_postnr: user_postnr,
+                    user_sted: user_sted,
+                    user_phone: user_phone,
+                    _token: _token
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "/order/confirm",
+                    data: formData,
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    success: function (data) {
+                        // $('#checkout-form')[0].reset();
+                        jQuery("#user-checkout").modal('hide');
+                        jQuery("#cart-model").replaceWith(data);
+                        $("#cartData").html('');
+                        $("#user-checkout").on("hidden.bs.modal",function(){
+                            $('#cart-model').modal('show')
+                        })
+                    },
+                });
+            }
         }
     });
 });

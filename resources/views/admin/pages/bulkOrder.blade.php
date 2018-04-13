@@ -26,6 +26,8 @@
                         <th>E-mail</th>
                         <th>Phone</th>
                         <th>Address</th>
+                        <th>TLF</th>
+                        <th>Fax</th>
                         <th>Inquiry for</th>
                         <th>Sent on</th>
                         <th>Delete</th>
@@ -38,8 +40,15 @@
                             <td>{{ $bulkOrder->name }}</td>
                             <td>{{ $bulkOrder->email }}</td>
                             <td>{{ $bulkOrder->phone }}</td>
-                            <td>{{ $bulkOrder->address }}</td>
-                            <td>{{ $bulkOrder->item }}</td>
+                            <td>
+                                {{ $bulkOrder->address }}, 
+                                {{ $bulkOrder->land }}
+                                {{ $bulkOrder->poststed }},
+                                {{ $bulkOrder->post_number }}
+                            </td>
+                            <td>{{ $bulkOrder->tlf }}</td>
+                            <td>{{ $bulkOrder->fax }}</td>
+                            <td>{{ $bulkOrder->order_for }}</td>
                             <td>{{ $bulkOrder->created_at }}</td>
                             <td>
                                 <form id="delete-form-{{ $bulkOrder->id }}" method="POST" action="{{ route('bulkOrder.destroy', $bulkOrder->id) }}" style="display: none;">

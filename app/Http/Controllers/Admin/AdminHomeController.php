@@ -54,7 +54,7 @@ class AdminHomeController extends Controller
     {
         BulkOrder::where('id', $id)->delete();
 
-        return redirect()->back()->with('message', 'order deleted');
+        return redirect()->back()->with('message', 'Inquiry deleted');
     }
 
     /**
@@ -74,9 +74,10 @@ class AdminHomeController extends Controller
      */
     public function orderProducts($id)
     {
-    	$orderProducts = OrderProduct::where('order_id', $id)->get();
+    	$order = Order::where('id',$id)->first();
+        $orderProducts = OrderProduct::where('order_id', $id)->get();
 
-        return view('admin.pages.productsListOfOrder', compact('orderProducts'));
+        return view('admin.pages.productsListOfOrder', compact('orderProducts', 'order'));
     }
 
     /**
@@ -88,5 +89,16 @@ class AdminHomeController extends Controller
         Order::where('id', $id)->delete();
 
         return redirect()->back()->with('message', 'order deleted');
+    }
+
+    /**
+     * contact us list
+     *
+     */
+    public function contactUsData()
+    {
+        $contact_uses = ContactUs::all();
+
+        return view('admin.pages.contact_us', compact('contact_uses'));
     }
 }
