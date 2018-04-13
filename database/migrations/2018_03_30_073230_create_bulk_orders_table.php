@@ -20,6 +20,11 @@ class CreateBulkOrdersTable extends Migration
             $table->string('phone', 15);
             $table->string('address', 255);
             $table->string('item');
+            $table->string('land');
+            $table->string('poststed')->nullable();
+            $table->string('post_number');
+            $table->string('tlf')->nullable();
+            $table->string('fax')->nullable();
             $table->timestamps();
         });
     }
