@@ -29,6 +29,7 @@
                         <th>TLF</th>
                         <th>Fax</th>
                         <th>Inquiry for</th>
+                        <th>Message</th>
                         <th>Sent on</th>
                         <th>Delete</th>
                     </tr>
@@ -42,13 +43,14 @@
                             <td>{{ $bulkOrder->phone }}</td>
                             <td>
                                 {{ $bulkOrder->address }}, 
-                                {{ $bulkOrder->land }}
+                                {{ $bulkOrder->land }}<br />
                                 {{ $bulkOrder->poststed }},
                                 {{ $bulkOrder->post_number }}
                             </td>
                             <td>{{ $bulkOrder->tlf }}</td>
                             <td>{{ $bulkOrder->fax }}</td>
                             <td>{{ $bulkOrder->order_for }}</td>
+                            <td title="{{ $bulkOrder->additional_inquiry }}">{{ str_limit($bulkOrder->additional_inquiry, $limit=50, $end="...") }}</td>
                             <td>{{ $bulkOrder->created_at }}</td>
                             <td>
                                 <form id="delete-form-{{ $bulkOrder->id }}" method="POST" action="{{ route('bulkOrder.destroy', $bulkOrder->id) }}" style="display: none;">
@@ -85,7 +87,8 @@
                 'searching'   : false,
                 'ordering'    : true,
                 'info'        : true,
-                'autoWidth'   : false
+                'autoWidth'   : false,
+                "scrollX"     : true
             });
         });
     </script>

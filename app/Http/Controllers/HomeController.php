@@ -47,9 +47,14 @@ class HomeController extends Controller
         $bulkOrder->tlf = $request->tlf;
         $bulkOrder->fax = $request->fax;
         $bulkOrder->order_for = $request->orderFor;
+        $bulkOrder->additional_inquiry = $request->additional_inquiry;
         $bulkOrder->save();
 
-        return response()->json("Your inquiry has been submitted successfully");
+        return response()->json([
+            "success" => true,
+            "response" => 'Your inquiry has been submitted successfully'
+        ]);
+        //return response()->json("Your inquiry has been submitted successfully");
     }
 
     /**

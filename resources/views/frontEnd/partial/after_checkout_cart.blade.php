@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 class="modal-title text-center">Bekrefelse - din handel er nå bekreftet</h3>
+                <h3 class="modal-title text-center">Bekreftelse - din handel er nå bekreftet</h3>
             </div>
             <div class="modal-body">
                 <table class="table table-striped" id="tblGrid">

@@ -38,7 +38,6 @@
                             <td>{{ $contact_us->phone }}</td>
                             <td>{{ $contact_us->subject }}</td>
                             <td>{{ $contact_us->message }}</td>
-                            <td>{{ $contact_us->order_value }}</td>
                         </tr>
                     @endforeach
                 </tbody>

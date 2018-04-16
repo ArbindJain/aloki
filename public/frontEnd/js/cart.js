@@ -114,7 +114,7 @@ $(document).ready(function() {
     //checkout model display
     $('body').on('click', '#check-out', function(event) {
         event.preventDefault();
-        jQuery("#cart-model").modal('hide');
+        $("#cart-model").modal('hide');
         $("#cart-model").on("hidden.bs.modal",function(){
             $('#user-checkout').modal('show')
         })
@@ -132,49 +132,53 @@ $(document).ready(function() {
         user_sted = $('#checkout-sted').val();
         user_phone = $('#checkout-phone').val();
         _token =  $('input[name="_token"]').val();
+        validMail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
         if(user_name == "") {
-            $('#checkout-name').focus();
+            $('#checkout-name').focus().addClass('required-field');
         } else if(user_etternavn == "") {
-            $('#checkout-etternavn').focus();
+            $('#checkout-etternavn').focus().addClass('required-field');
         } else if (user_email == "") {
-            $('#checkout-email').focus();
+            $('#checkout-email').focus().addClass('required-field');
+        } else if (!validMail.test(user_email)) {
+            alert('Please provide a valid email address');
+            $('#checkout-email').focus().addClass('field-red');
         } else if (user_address == "") {
-            $('#checkout-address').focus();
+            $('#checkout-address').focus().addClass('required-field');
         } else if(user_postnr == "") {
-            $('#checkout-postnr').focus();
+            $('#checkout-postnr').focus().addClass('required-field');
         } else if (user_sted == "") {
-            $('#checkout-sted').focus();
+            $('#checkout-sted').focus().addClass('required-field');
         } else if (user_phone == "") {
-            $('#checkout-phone').focus();
+            $('#checkout-phone').focus().addClass('required-field');
         } else {
-            if (confirm('Once order confirmed, can not be changed')) {
-                var formData = {
-                    user_name: user_name,
-                    user_etternavn: user_etternavn,
-                    user_email: user_email,
-                    user_address: user_address,
-                    user_postnr: user_postnr,
-                    user_sted: user_sted,
-                    user_phone: user_phone,
-                    _token: _token
-                };
-                $.ajax({
-                    type: "POST",
-                    url: "/order/confirm",
-                    data: formData,
-                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                    success: function (data) {
-                        // $('#checkout-form')[0].reset();
-                        jQuery("#user-checkout").modal('hide');
-                        jQuery("#cart-model").replaceWith(data);
-                        $("#cartData").html('');
-                        $("#user-checkout").on("hidden.bs.modal",function(){
-                            $('#cart-model').modal('show')
-                        })
-                    },
-                });
-            }
+            var formData = {
+                user_name: user_name,
+                user_etternavn: user_etternavn,
+                user_email: user_email,
+                user_address: user_address,
+                user_postnr: user_postnr,
+                user_sted: user_sted,
+                user_phone: user_phone,
+                _token: _token
+            };
+            $.ajax({
+                type: "POST",
+                url: "/order/confirm",
+                data: formData,
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                success: function (data) {
+                    $('#checkout-form')[0].reset();
+                    $('.required-field').removeClass('required-field');
+                    $('.field-red').removeClass('field-red');
+                    $("#user-checkout").modal('hide');
+                    $("#cart-model").replaceWith(data);
+                    $("#cartData").html('');
+                    // $("#user-checkout").on("hidden.bs.modal",function(){
+                        $('#cart-model').modal('show')
+                    // })
+                },
+            });
         }
     });
 });

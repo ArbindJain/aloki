@@ -4962,5 +4962,11 @@ a:hover, a:active, a:focus {
 .required-field::placeholder {
   color: #FF0000;
 }
+.field-red {
+  color: #FF0000;
+}
 
+#product li {
+  display: none;
+}
 /*# sourceMappingURL=theme.css.map */

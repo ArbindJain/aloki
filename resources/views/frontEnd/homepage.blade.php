@@ -160,16 +160,16 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="bulkorder-name" class="form-control required-field" name="name" placeholder="Firma *" required />
+                                        <input type="text" id="bulkorder-name" class="form-control" name="name" placeholder="Firma *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text"  id="bulkorder-phone" class="form-control required-field" name="phone" placeholder="Kontakt *" required />
+                                        <input type="text"  id="bulkorder-phone" class="form-control" name="phone" placeholder="Kontakt *" required />
                                     </div>
                                     <div class="form-group">
                                         <input type="text"  id="bulkorder-address" class="form-control" name="address" placeholder="Addresse" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="bulkorder-land" class="form-control required-field" name="land" placeholder="Land *" required />
+                                        <input type="text" id="bulkorder-land" class="form-control" name="land" placeholder="Land *" required />
                                     </div>
                                     <div class="form-group">
                                         <input type="text" id="bulkorder-poststed" class="form-control" name="poststed" placeholder="Poststed" />
@@ -178,13 +178,16 @@
                                         <input type="text" id="bulkorder-post_number" class="form-control" name="post_number" placeholder="Postnummer" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control required-field" id="bulkorder-email" name="email" placeholder="Email *" required />
+                                        <input type="text" class="form-control" id="bulkorder-email" name="email" placeholder="Email *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control required-field" id="bulkorder-tlf" name="tlf" placeholder="Tlf *" required />
+                                        <input type="text" class="form-control" id="bulkorder-tlf" name="tlf" placeholder="Tlf *" required />
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="bulkorder-fax" name="fax" placeholder="Fax" />
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="bulkorder-inquiry" name="additional_inquiry" placeholder="Prisførespørsele/bestillingsskemaet" rows="4"></textarea>
                                     </div>
                                     <p style="color: #FF0000">Felt merket med * må fylles ut.</p>
                                     <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="bulk-submit">Submit</button>
@@ -210,25 +213,25 @@
                                 <form id="checkout-form" role="form" action="" method="">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <input type="text" class="form-control required-field" id="checkout-name" name="name" placeholder="Fornavn *" required />
+                                        <input type="text" class="form-control" id="checkout-name" name="name" placeholder="Fornavn *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control required-field" id="checkout-etternavn" name="etternavn" placeholder="Etternavn *" required />
+                                        <input type="text" class="form-control" id="checkout-etternavn" name="etternavn" placeholder="Etternavn *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control required-field" id="checkout-email" name="email" placeholder="Epost *" required />
+                                        <input type="email" class="form-control" id="checkout-email" name="email" placeholder="Epost *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control required-field" id="checkout-address" name="address" placeholder="Adresse *" required />
+                                        <input type="text" class="form-control" id="checkout-address" name="address" placeholder="Adresse *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control required-field" id="checkout-postnr" name="postnr" placeholder="Postnr *" required />
+                                        <input type="text" class="form-control" id="checkout-postnr" name="postnr" placeholder="Postnr *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control required-field" id="checkout-sted" name="sted" placeholder="Sted *" required />
+                                        <input type="text" class="form-control" id="checkout-sted" name="sted" placeholder="Sted *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control required-field" id="checkout-phone" name="phone" placeholder="Telefon *" required />
+                                        <input type="text" class="form-control" id="checkout-phone" name="phone" placeholder="Telefon *" required />
                                     </div>
                                     <p style="color: #FF0000">Fyll inn felter merket med *</p>
                                     <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="order-confirm">Confirm</button>
@@ -386,10 +389,10 @@
                         </h2>
                     </div>
 
-                    <ul>
+                    <ul id="product">
                         @if(count($products) > 0)
                             @foreach($products as $product)
-                                <li class="col-md-4 col-sm-6 col-xs-6 wow fadeInDown" data-wow-delay="0.2s">
+                                <li class="col-md-4 col-sm-6 col-xs-6 wow fadeInDown product-li" data-wow-delay="0.2s">
                                     <a href="#" class="" data-toggle="modal" data-target="#menu-01">
                                         <img src="{{ asset('images/products').'/'.$product->image }}" alt="placehoder">
                                     </a>
@@ -427,7 +430,7 @@
                     </ul> 
                 </div>
                 <div class="col-md-12 text-center">
-                <button type="submit" name="submit" class="btn btn-primary btn-lg text-center bulk-submit" style="margin-top: 50px;">se alt produkt</button>
+                <button type="submit" id="see-all" name="submit" class="btn btn-primary btn-lg text-center bulk-submit" style="margin-top: 50px;">Se alle produkter</button>
                 </div>
             </div>
         </section>
@@ -1393,5 +1396,6 @@
         <script src="{{ asset('frontEnd/js/bulkOrderForm.js') }}"></script>
         <script src="{{ asset('frontEnd/js/contactUsForm.js') }}"></script>
         <script src="{{ asset('frontEnd/js/cart.js') }}"></script>
+        <script src="{{ asset('frontEnd/js/see_all_product.js') }}"></script>
     </body>
 </html>
