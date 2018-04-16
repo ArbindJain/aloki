@@ -405,7 +405,7 @@
                                         </span>
                                     </span>
                                     <div class="cartDiv">
-                                    <span class="" style="">{{ $product->description }}</span>
+                                    <span class="" style="color: #000;">{{ $product->description }}</span>
                                         <span class="menu-list-item-title">
                                             <span class="menu-list-item-name">Mengde :
                                                 <input type="hidden" class="productId" name="productId" value="{{ $product->id }}">
