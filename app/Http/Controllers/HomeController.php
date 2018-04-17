@@ -40,19 +40,19 @@ class HomeController extends Controller
         $bulkOrder->name = $request->name;
         $bulkOrder->phone = $request->phone;
         $bulkOrder->address = $request->address;
-        $bulkOrder->land = $request->land;
+        // $bulkOrder->land = $request->land;
         $bulkOrder->poststed = $request->poststed;
         $bulkOrder->post_number = $request->post_number;
         $bulkOrder->email = $request->email;
         $bulkOrder->tlf = $request->tlf;
-        $bulkOrder->fax = $request->fax;
+        // $bulkOrder->fax = $request->fax;
         $bulkOrder->order_for = $request->orderFor;
         $bulkOrder->additional_inquiry = $request->additional_inquiry;
         $bulkOrder->save();
 
         return response()->json([
             "success" => true,
-            "response" => 'Your inquiry has been submitted successfully'
+            "response" => 'Meldingen ble sent inn.'
         ]);
         //return response()->json("Your inquiry has been submitted successfully");
     }
@@ -79,6 +79,6 @@ class HomeController extends Controller
         $contactUs->message = htmlspecialchars_decode($request->message);
         $contactUs->save();
 
-        return response()->json('Your message submitted successfully.');
+        return response()->json('Meldingen ble sent inn.');
     }
 }

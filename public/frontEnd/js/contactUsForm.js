@@ -18,7 +18,7 @@ $(document).ready(function() {
         } else if(email == "") {
             $('#contact-email').focus().addClass('required-field');
         } else if(!validMail.test(email)) {
-            alert('Please provide a valid email address');
+            alert('Vennligst skriv inn riktig e-post adresse');
             $('#contact-email').focus().addClass('field-red');
         } else if (phone == "") {
             $('#contact-phone').focus().addClass('required-field');

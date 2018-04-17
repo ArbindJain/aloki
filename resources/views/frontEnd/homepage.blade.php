@@ -163,14 +163,14 @@
                                         <input type="text" id="bulkorder-name" class="form-control" name="name" placeholder="Firma *" required />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text"  id="bulkorder-phone" class="form-control" name="phone" placeholder="Kontakt *" required />
+                                        <input type="text"  id="bulkorder-phone" class="form-control" name="phone" placeholder="Kontakt Person *" required />
                                     </div>
                                     <div class="form-group">
                                         <input type="text"  id="bulkorder-address" class="form-control" name="address" placeholder="Addresse" />
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <input type="text" id="bulkorder-land" class="form-control" name="land" placeholder="Land *" required />
-                                    </div>
+                                    </div> -->
                                     <div class="form-group">
                                         <input type="text" id="bulkorder-poststed" class="form-control" name="poststed" placeholder="Poststed" />
                                     </div>
@@ -183,11 +183,11 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="bulkorder-tlf" name="tlf" placeholder="Tlf *" required />
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <input type="text" class="form-control" id="bulkorder-fax" name="fax" placeholder="Fax" />
-                                    </div>
+                                    </div> -->
                                     <div class="form-group">
-                                        <textarea class="form-control" id="bulkorder-inquiry" name="additional_inquiry" placeholder="Prisførespørsele/bestillingsskemaet" rows="4"></textarea>
+                                        <textarea class="form-control" id="bulkorder-inquiry" name="additional_inquiry" placeholder="Melding" rows="4"></textarea>
                                     </div>
                                     <p style="color: #FF0000">Felt merket med * må fylles ut.</p>
                                     <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="bulk-submit">Submit</button>

@@ -8,12 +8,12 @@ jQuery(document).ready(function() {
         name = $('#bulkorder-name').val();
         phone = $('#bulkorder-phone').val();
         address = $('#bulkorder-address').val();
-        land = $('#bulkorder-land').val();
+        // land = $('#bulkorder-land').val();
         poststed = $('#bulkorder-poststed').val();
         post_number = $('#bulkorder-post_number').val();
         email = $('#bulkorder-email').val();
         tlf = $('#bulkorder-tlf').val();
-        fax = $('#bulkorder-fax').val();
+        // fax = $('#bulkorder-fax').val();
         orderFor = $('#bulkorder-for').val();
         additional_inquiry = $('#bulkorder-inquiry').val();
         _token =  $('input[name="_token"]').val();
@@ -23,12 +23,10 @@ jQuery(document).ready(function() {
             $('#bulkorder-name').focus().addClass('required-field');
         } else if(phone == "") {
             $('#bulkorder-phone').focus().addClass('required-field');
-        } else if (land == "") {
-            $('#bulkorder-land').focus().addClass('required-field');
         } else if (email == "") {
                 $('#bulkorder-email').focus().addClass('required-field');
         } else if (!validMail.test(email)) {            
-            alert('Please provide a valid email address');
+            alert('Vennligst skriv inn riktig e-post adresse');
             $('#bulkorder-email').focus().addClass('field-red');
             return false;
         } else if (tlf == "") {
@@ -39,12 +37,10 @@ jQuery(document).ready(function() {
                 name: name,
                 phone: phone,
                 address: address,
-                land: land,
                 poststed: poststed,
                 post_number: post_number,
                 email: email,
                 tlf: tlf,
-                fax: fax,
                 orderFor: orderFor,
                 additional_inquiry: additional_inquiry,
                 _token:_token
