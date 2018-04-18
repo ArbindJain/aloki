@@ -27,7 +27,6 @@
                         <th>Phone</th>
                         <th>Address</th>
                         <th>TLF</th>
-                        <th>Fax</th>
                         <th>Inquiry for</th>
                         <th>Message</th>
                         <th>Sent on</th>
@@ -42,13 +41,11 @@
                             <td>{{ $bulkOrder->email }}</td>
                             <td>{{ $bulkOrder->phone }}</td>
                             <td>
-                                {{ $bulkOrder->address }}, 
-                                {{ $bulkOrder->land }}<br />
+                                {{ $bulkOrder->address }}, <br />
                                 {{ $bulkOrder->poststed }},
                                 {{ $bulkOrder->post_number }}
                             </td>
                             <td>{{ $bulkOrder->tlf }}</td>
-                            <td>{{ $bulkOrder->fax }}</td>
                             <td>{{ $bulkOrder->order_for }}</td>
                             <td title="{{ $bulkOrder->additional_inquiry }}">{{ str_limit($bulkOrder->additional_inquiry, $limit=50, $end="...") }}</td>
                             <td>{{ $bulkOrder->created_at }}</td>
