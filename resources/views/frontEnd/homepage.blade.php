@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>ALoki - Fisk</title>
-        <link rel="icon" type="image/png" href="{{ asset('frontEnd/img/favicon.png') }}"/>
+        <link rel="icon" type="image/png" href="{{ asset('frontEnd/img/favicon.ico') }}"/>
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700%7CAlex+Brush%7CPhilosopher:400,700,900" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('frontEnd/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('frontEnd/css/theme.css') }}">

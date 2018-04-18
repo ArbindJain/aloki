@@ -31,7 +31,6 @@ class HomeController extends Controller
             'name'=>'required',
             'email'=>'required|email',
             'phone'=>'required',
-            'land'=>'required',
             'tlf'=>'required',
             'orderFor'=>'required',
         ]);
