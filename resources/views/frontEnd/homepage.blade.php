@@ -190,7 +190,7 @@
                                         <textarea class="form-control" id="bulkorder-inquiry" name="additional_inquiry" placeholder="Melding" rows="4"></textarea>
                                     </div>
                                     <p style="color: #FF0000">Felt merket med * må fylles ut.</p>
-                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="bulk-submit">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="bulk-submit">sende inn</button>
                                 </form>
                             </div>
                         </div>
@@ -234,7 +234,7 @@
                                         <input type="text" class="form-control" id="checkout-phone" name="phone" placeholder="Telefon *" required />
                                     </div>
                                     <p style="color: #FF0000">Fyll inn felter merket med *</p>
-                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="order-confirm">Confirm</button>
+                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="order-confirm">Bekreft</button>
                                 </form>
                             </div>
                         </div>

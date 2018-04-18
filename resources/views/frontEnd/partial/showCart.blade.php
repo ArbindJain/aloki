@@ -44,7 +44,7 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default " data-dismiss="modal">Bestil fler produkter</button>
+                    <button type="button" class="btn btn-default " data-dismiss="modal">Bestil flere produkter</button>
                     <button type="button" id="check-out" class="btn btn-primary">Gå til kassen</button>
                 </div>
             @else
