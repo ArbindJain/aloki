@@ -93,6 +93,16 @@
 .corner-ribbon.orange{background: #e82;}
 .corner-ribbon.yellow{background: #ec0;}
         </style>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117929025-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117929025-1');
+</script>
+
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="50" style="font-family: 'Lato', sans-serif!important;">
@@ -190,7 +200,7 @@
                                         <textarea class="form-control" id="bulkorder-inquiry" name="additional_inquiry" placeholder="Melding" rows="4"></textarea>
                                     </div>
                                     <p style="color: #FF0000">Felt merket med * må fylles ut.</p>
-                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="bulk-submit">sende inn</button>
+                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="bulk-submit">send inn</button>
                                 </form>
                             </div>
                         </div>
