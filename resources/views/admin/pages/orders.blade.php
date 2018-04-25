@@ -30,6 +30,7 @@
                         <th>Ordered value</th>
                         <th>Go to order</th>
                         <th>Delete</th>
+                        <th>Ordered Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,6 +60,8 @@
                                     }"><span class="fa fa-trash"></span>
                                 </a>
                             </td>
+                            
+                            <td>{{ $order->created_at }}</td>
                         </tr>
                     @endforeach
                 </tbody>
