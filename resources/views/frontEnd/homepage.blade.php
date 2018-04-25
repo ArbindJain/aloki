@@ -124,7 +124,7 @@
                     <ul class="nav navbar-nav">
                         <!-- <li><a href="#">home</a></li> -->
                         <!-- <li><b href="" style="font-size: 14px; color: red;">Hjemlevering **  &nbsp;</b></li> -->
-                        <li><a href="#product" style="font-size: 14px">Produkter</a></li>
+                        <li><a href="#product" style="font-size: 14px">PRIVATKUNDE</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#bulk-order" style="font-size: 14px">Bedriftskunde</a></li>
                         <li><a href="#about" style="font-size: 14px">Kvalitetsgaranti</a></li>
                         <li><a href="#contact" style="font-size: 14px">Kontakt oss</a></li>
@@ -386,7 +386,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="main-heading "><!-- Recomendation --> <span>Produkter</span>
+                        <h2 class="main-heading "><!-- Recomendation --> <span>PRIVATKUNDE</span>
                             <p style="font-size: 16px; margin-top: 12px;">Du får se varene ved levering før du betale</p>
                             <span class="main-heading-decor">
                                 <span class=""><img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20"></span>
@@ -440,7 +440,7 @@
                     </ul> 
                 </div>
                 <div class="col-md-12 text-center">
-                <button type="submit" id="see-all" name="submit" class="btn btn-primary btn-lg text-center bulk-submit" style="margin-top: 50px;">Se alle produkter</button>
+                <button type="submit" id="see-all" name="submit" class="btn btn-primary btn-lg text-center bulk-submit" style="margin-top: 50px;">Se alle PRIVATKUNDE</button>
                 </div>
             </div>
         </section>
