@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	$products = Product::all();
+    	$products = Product::orderBy('created_at', 'desc')->get();
 
         return view('frontEnd.homepage', compact('products'));
     }
@@ -39,12 +39,10 @@ class HomeController extends Controller
         $bulkOrder->name = $request->name;
         $bulkOrder->phone = $request->phone;
         $bulkOrder->address = $request->address;
-        // $bulkOrder->land = $request->land;
         $bulkOrder->poststed = $request->poststed;
         $bulkOrder->post_number = $request->post_number;
         $bulkOrder->email = $request->email;
         $bulkOrder->tlf = $request->tlf;
-        // $bulkOrder->fax = $request->fax;
         $bulkOrder->order_for = $request->orderFor;
         $bulkOrder->additional_inquiry = $request->additional_inquiry;
         $bulkOrder->save();
@@ -53,7 +51,6 @@ class HomeController extends Controller
             "success" => true,
             "response" => 'Meldingen ble sent inn.'
         ]);
-        //return response()->json("Your inquiry has been submitted successfully");
     }
 
     /**

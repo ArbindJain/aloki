@@ -4348,7 +4348,7 @@ a:hover, a:active, a:focus {
   .navbar .navbar-toggle .icon-bar {
     background: #c19c62; }
   .navbar-nav {
-    float: right;
+    /*float: right;*/
     margin-top: 0; }
     @media (min-width: 480px) and (max-width: 1199px) {
       .navbar-nav {
@@ -4968,5 +4968,54 @@ a:hover, a:active, a:focus {
 
 #product li {
   display: none;
+}
+.navbar {
+  margin-bottom: 0px;
+}
+
+@media (min-width: 480px) and (max-width: 991px) {
+  .navbar-nav {
+    margin-top: 0;
+  }
+
+  .home.image-slider .swiper-slide {
+    padding: 68vh 15px 75px;
+  }
+
+  .corner-ribbon.top-left {
+    top: 355px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar-nav {
+    margin-top: 0;
+  }
+
+  .sub-header {
+    font-size: 19px !important;
+  }
+
+  .corner-ribbon.top-left {
+    top: 355px !important;
+  }
+
+  .home.image-slider .swiper-slide {
+    padding: 65vh 15px 75px;
+  }
+
+  .home h1 {
+    font-size: 170px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-nav {
+    float: right;
+  }
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 0;
 }
 /*# sourceMappingURL=theme.css.map */

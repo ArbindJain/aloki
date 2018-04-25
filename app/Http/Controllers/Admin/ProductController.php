@@ -56,6 +56,7 @@ class ProductController extends Controller
             'image'=>'required|mimes:jpeg,png,jpg,gif,svg',
             'price'=>'required|numeric',
             'old_price'=>'required|numeric',
+            'quantity_multiplier'=>'required|numeric',
         ]);
 
         //save image
@@ -70,6 +71,7 @@ class ProductController extends Controller
         $product->image = $imageName;
         $product->price = $request->price;
         $product->old_price = $request->old_price;
+        $product->quantity_multiplier = $request->quantity_multiplier;
         $product->save();
 
         return redirect(route('product.index'));
@@ -114,6 +116,7 @@ class ProductController extends Controller
             'image'=>'mimes:jpeg,png,jpg,gif,svg',
             'price'=>'required|numeric',
             'old_price'=>'required|numeric',
+            'quantity_multiplier'=>'required|numeric',
         ]);
 
         if ($request->hasFile('image')) {
@@ -139,6 +142,7 @@ class ProductController extends Controller
         $product->image = $imageName;
         $product->price = $request->price;
         $product->old_price = $request->old_price;
+        $product->quantity_multiplier = $request->quantity_multiplier;
         $product->update();
 
         return redirect(route('product.index'));

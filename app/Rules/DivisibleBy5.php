@@ -6,14 +6,21 @@ use Illuminate\Contracts\Validation\Rule;
 
 class DivisibleBy5 implements Rule
 {
+
+    /**
+     * Multiplier passed from controller.
+     *
+     */
+    protected $multiplier;
+
     /**
      * Create a new rule instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($multiplier)
     {
-        //
+        $this->multiplier = $multiplier;
     }
 
     /**
@@ -25,7 +32,7 @@ class DivisibleBy5 implements Rule
      */
     public function passes($attribute, $value)
     {
-        return $value % 5 === 0;
+        return $value % $this->multiplier === 0;
     }
 
     /**
