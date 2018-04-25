@@ -18,16 +18,15 @@ class CartController extends Controller
      */
     public function addItemToCart(Request $request)
     {
+    	$product = Product::where('id', $request->productId)->first();
+
     	$validator = Validator::make($request->all(), [
-            'quantityValue' => ['required', new DivisibleBy5],
+            'quantityValue' => ['required', new DivisibleBy5($product->quantity_multiplier)],
         ]);
 
         if ($validator->fails()) {
-        	return response()->json(['status'=>'The quantity should be multiple to 5']);
-
+        	return response()->json(['status'=>'The quantity should be multiple to '.$product->quantity_multiplier]);
         } else {
-
-	    	$product = Product::where('id', $request->productId)->first();
 
 	    	Cart::add($product->id, $product->name, $request->quantityValue, $product->price);
 
@@ -60,7 +59,6 @@ class CartController extends Controller
     {
     	Cart::remove($rowId);
 
-    	// $cartProducts = Cart::content();
     	if (Cart::count() > 0) {
 	    	return response()->json([
 			    "cartItem" => Cart::count(),
@@ -69,7 +67,6 @@ class CartController extends Controller
     	} else {
     		return response()->json("Handlekurven er tom");
     	}
-    	// return view('frontEnd.partial.showCart', compact('cartProducts'))->render();
     }
 
     public function orderConfirm(Request $request)
@@ -112,6 +109,5 @@ class CartController extends Controller
 		Cart::destroy();
 		
 		return view('frontEnd.partial.after_checkout_cart', compact('productLists', 'order'))->render();
-
 	}
 }

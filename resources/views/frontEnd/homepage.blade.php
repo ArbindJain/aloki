@@ -1,109 +1,109 @@
 <!DOCTYPE html>
 <html lang="zxx">
     
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>ALoki - Fisk</title>
-        <link rel="icon" type="image/png" href="{{ asset('frontEnd/img/favicon.ico') }}"/>
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700%7CAlex+Brush%7CPhilosopher:400,700,900" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('frontEnd/css/bootstrap.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontEnd/css/theme.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontEnd/css/own.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300i,400" rel="stylesheet"> 
-        <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-        <style type="text/css">
-            /* The ribbons */
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>ALoki - Fisk</title>
+    <link rel="icon" type="image/png" href="{{ asset('frontEnd/img/favicon.ico') }}"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700%7CAlex+Brush%7CPhilosopher:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('frontEnd/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontEnd/css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontEnd/css/own.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,400" rel="stylesheet"> 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <style type="text/css">
+        /* The ribbons */
 
-.corner-ribbon{
-  width: 400px;
-  background: #e43;
-  position: absolute;
-  top: 25px;
-  left: -50px;
-  text-align: center;
-  line-height: 56px;
-  letter-spacing: 1px;
-  color: #f0f0f0;
-  text-shadow: none;
-  font-weight: bold;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  font-size: 18px;
-}
+      .corner-ribbon{
+        width: 400px;
+        background: #e43;
+        position: absolute;
+        top: 25px;
+        left: -50px;
+        text-align: center;
+        line-height: 56px;
+        letter-spacing: 1px;
+        color: #f0f0f0;
+        text-shadow: none;
+        font-weight: bold;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        font-size: 18px;
+      }
 
-/* Custom styles */
+      /* Custom styles */
 
-.corner-ribbon.sticky{
-  position: fixed;
-}
+      .corner-ribbon.sticky{
+        position: fixed;
+      }
 
-.corner-ribbon.shadow{
-  box-shadow: 0 0 3px rgba(0,0,0,.3);
-}
+      .corner-ribbon.shadow{
+        box-shadow: 0 0 3px rgba(0,0,0,.3);
+      }
 
-/* Different positions */
+      /* Different positions */
 
-.corner-ribbon.top-left{
-  top: 135px;
-  left: -130px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
+      .corner-ribbon.top-left{
+        top: 135px;
+        left: -130px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
 
-.corner-ribbon.top-right{
-  top: 25px;
-  right: -50px;
-  left: auto;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
+      .corner-ribbon.top-right{
+        top: 25px;
+        right: -50px;
+        left: auto;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
 
-.corner-ribbon.bottom-left{
-  top: auto;
-  bottom: 25px;
-  left: -50px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
+      .corner-ribbon.bottom-left{
+        top: auto;
+        bottom: 25px;
+        left: -50px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
 
-.corner-ribbon.bottom-right{
-  top: auto;
-  right: -50px;
-  bottom: 25px;
-  left: auto;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
+      .corner-ribbon.bottom-right{
+        top: auto;
+        right: -50px;
+        bottom: 25px;
+        left: auto;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+      }
 
-/* Colors */
+      /* Colors */
 
-.corner-ribbon.white{background: #f0f0f0; color: #555;}
-.corner-ribbon.black{background: #333;}
-.corner-ribbon.grey{background: #999;}
-.corner-ribbon.blue{background: #39d;}
-.corner-ribbon.green{background: #2c7;}
-.corner-ribbon.turquoise{background: #1b9;}
-.corner-ribbon.purple{background: #95b;}
-.corner-ribbon.red{background: #e43;}
-.corner-ribbon.orange{background: #e82;}
-.corner-ribbon.yellow{background: #ec0;}
-        </style>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117929025-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      .corner-ribbon.white{background: #f0f0f0; color: #555;}
+      .corner-ribbon.black{background: #333;}
+      .corner-ribbon.grey{background: #999;}
+      .corner-ribbon.blue{background: #39d;}
+      .corner-ribbon.green{background: #2c7;}
+      .corner-ribbon.turquoise{background: #1b9;}
+      .corner-ribbon.purple{background: #95b;}
+      .corner-ribbon.red{background: #e43;}
+      .corner-ribbon.orange{background: #e82;}
+      .corner-ribbon.yellow{background: #ec0;}
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117929025-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'UA-117929025-1');
-</script>
+      gtag('config', 'UA-117929025-1');
+    </script>
 
-    </head>
+  </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="50" style="font-family: 'Lato', sans-serif!important;">
         <nav class="navbar navbar-fixed-top shadow navbar-fixed-active" id="js-nav">
@@ -267,11 +267,11 @@
         <section class="home image-slider">
 
             <div class="home-slider text-center">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper" style="background: url('frontEnd/img/h5.jpg');">
 
-                    <div class="swiper-slide" style="background: url('frontEnd/img/h5.jpg');">
+                    <div class="swiper-slide">
 
-                       <h1 class="main-heading inverse" style="color:#00008b;">velkommen til aloki<span style="font-size: 22px; color:#00008b;">LEVERANDØR AV SJØMAT TIL BEDRIFTER OG PRIVATKUNDER</span>
+                       <h1 class="main-heading inverse" style="color:#00008b;">velkommen til aloki<span class="sub-header" style="font-size: 22px; color:#00008b;">LEVERANDØR AV SJØMAT TIL BEDRIFTER OG PRIVATKUNDER</span>
 
                             <!-- <span class="main-heading-decor">                          
                                 <span class="">
@@ -290,7 +290,7 @@
                         <div class="corner-ribbon top-left sticky red shadow">Hjemlevering!!</div>
                         <div class="row" style="margin-top: 100px;  " >
      <div class="service_ col-md-10 col-md-offset-1" >
-       <div class="col-md-4">
+       <div class="col-md-4 col-sm-4">
         <div class="box">
         <div class="box_con">
             <i class="fas fa-truck fa-3x" style="color:#c19c62;"></i><br><br>
@@ -308,7 +308,7 @@
          <div class="circle hidden-xs"><span class="support"></span></div>
         </div>
        </div> -->
-       <div class="col-md-4">
+       <div class="col-md-4 col-sm-4">
         <div class="box">
         <div class="box_con">
             <i class="fas fa-thumbs-up fa-3x" style="color:#c19c62;"></i><br><br>
@@ -317,7 +317,7 @@
          <div class="circle hidden-xs"><span class="guarantee"></span></div>
         </div>
        </div>
-       <div class="col-md-4">
+       <div class="col-md-4 col-sm-4">
         <div class="box">
         <div class="box_con">
             <i class="fas fa-boxes fa-3x" style="color:#c19c62;"></i><br><br>
@@ -405,8 +405,7 @@
                                 <li class="col-md-4 col-sm-6 col-xs-6 wow fadeInDown product-li" data-wow-delay="0.2s">
                                     <a href="#" class="" data-toggle="modal" data-target="#menu-01">
                                         <img src="{{ asset('images/products').'/'.$product->image }}" alt="placehoder">
-                                    </a>
-                                    <span class="menu-list-item-title">
+                                    </a>                                    <span class="menu-list-item-title">
                                         <span class="menu-list-item-name">{{ $product->name }}</span>
                                         <span class="menu-list-item-price-row">
                                             <span class="menu-list-item-price">KR.<del class="text-danger">{{ number_format($product->old_price, 2, '.', ',') }}</del>&nbsp;{{ number_format($product->price, 2, '.', ',') }}
@@ -419,13 +418,20 @@
                                         <span class="menu-list-item-title">
                                             <span class="menu-list-item-name">Mengde :
                                                 <input type="hidden" class="productId" name="productId" value="{{ $product->id }}">
-                                                <input type="number" class="form-control quiantityValue" name="quant[1]" step="5" value="5" min="5" style="display: inline-block; width: 75px;">Kg
+                                                <input type="hidden" class="quantity_multiplier" name="multiplier" value="{{ $product->quantity_multiplier }}">
+                                                <input type="number" class="form-control quiantityValue" name="quant[1]" value="{{ $product->quantity_multiplier }}" step="{{ $product->quantity_multiplier }}" min="{{ $product->quantity_multiplier }}" style="display: inline-block; width: 75px;">Kg
                                             </span>
                                             <span class="menu-list-item-price-row">
-                                                <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+                                                <button type="button" class="btn btn-default btn-number hidden-md hidden-xs" data-type="minus" data-field="quant[1]">
                                                     <span class="glyphicon glyphicon-minus"></span>
                                                 </button>
-                                                <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                                                <button type="button" class="btn btn-default btn-number hidden-md hidden-xs" data-type="plus" data-field="quant[1]">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                                <button type="button" class="btn btn-default btn-number hidden-sm hidden-lg btn-sm" data-type="minus" data-field="quant[1]">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                                <button type="button" class="btn btn-default btn-number hidden-sm hidden-lg btn-sm" data-type="plus" data-field="quant[1]">
                                                     <span class="glyphicon glyphicon-plus"></span>
                                                 </button>
                                             </span>

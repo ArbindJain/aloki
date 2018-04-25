@@ -33,15 +33,22 @@
 									<label for="description">Description</label>
 									<input type="text" class="form-control" name="description" value="{{ $product->description }}" id="description" placeholder="Description">
 								</div>
-								<!-- price -->
-								<div class="form-group">
-									<label for="price">Price</label>
-									<input type="number" step="0.01" class="form-control" name="price" value="{{ $product->price }}" id="price" placeholder="Price">
-								</div>
-								<!-- Old price -->
-								<div class="form-group">
-									<label for="old_price">Old Price</label>
-									<input type="number" step="0.01" class="form-control" name="old_price" value="{{ $product->old_price }}" id="old_price" placeholder="Old Price">
+								<div class="row">
+									<!-- price -->
+									<div class="form-group col-md-4">
+										<label for="price">Price</label>
+										<input type="number" step="0.01" class="form-control" name="price" value="{{ $product->price }}" id="price" placeholder="Price">
+									</div>
+									<!-- Old price -->
+									<div class="form-group col-md-4">
+										<label for="old_price">Old Price</label>
+										<input type="number" step="0.01" class="form-control" name="old_price" value="{{ $product->old_price }}" id="old_price" placeholder="Old Price">
+									</div>
+									<!-- Quantity miltiplier -->
+									<div class="form-group col-md-4">
+										<label for="quantity_multiplier">Quantity in Multiple</label>
+										<input type="number" class="form-control" name="quantity_multiplier" value="{{ $product->quantity_multiplier }}" id="quantity_multiplier" placeholder="Quantity in Multiple">
+									</div>
 								</div>
 								<!-- Image Upload -->
 								<div class="form-group">
