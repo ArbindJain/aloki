@@ -399,10 +399,10 @@
                         </h2>
                     </div>
 
-                    <div class="col-md-12" id="product">
+                    <ul class="col-md-12" id="product">
                         @if(count($products) > 0)
                             @foreach($products as $product)
-                                <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInDown product-li" data-wow-delay="0.2s">
+                                <li class="col-md-4 col-sm-6 col-xs-6 wow fadeInDown product-li" data-wow-delay="0.2s">
                                     <a href="#" class="" data-toggle="modal" data-target="#menu-01">
                                         <img src="{{ asset('images/products').'/'.$product->image }}" alt="placehoder" class="img-responsive">
                                     </a>                                    <span class="menu-list-item-title">
@@ -440,10 +440,10 @@
                                             <a class="btn btn-sm btn-success pull-right cart-submit" href="{{ route('cartAdd', $product->id) }}">KJØP PRODUKT</a>
                                         </span>
                                     </div>
-                                </div>
+                                </li>
                             @endforeach
                         @endif
-                    </div> 
+                    </ul> 
                 </div>
                 <div class="col-md-12 text-center">
                 <button type="submit" id="see-all" name="submit" class="btn btn-primary btn-lg text-center bulk-submit" style="margin-top: 50px;">Se alle PRIVATKUNDE</button>
