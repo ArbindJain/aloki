@@ -446,7 +446,7 @@
                     </ul> 
                 </div>
                 <div class="col-md-12 text-center">
-                <button type="submit" id="see-all" name="submit" class="btn btn-primary btn-lg text-center bulk-submit" style="margin-top: 50px;">Se alle PRIVATKUNDE</button>
+                <button type="submit" id="see-all" name="submit" class="btn btn-primary btn-lg text-center bulk-submit" style="margin-top: 50px;">Se alle Produkter</button>
                 </div>
             </div>
         </section>
