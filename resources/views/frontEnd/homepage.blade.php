@@ -404,7 +404,7 @@
                             @foreach($products as $product)
                                 <div class="col-md-4 col-sm-6 col-xs-6 wow fadeInDown product-li" data-wow-delay="0.2s">
                                     <a href="#" class="" data-toggle="modal" data-target="#menu-01">
-                                        <img src="{{ asset('images/products').'/'.$product->image }}" alt="placehoder">
+                                        <img src="{{ asset('images/products').'/'.$product->image }}" alt="placehoder" class="img-responsive">
                                     </a>                                    <span class="menu-list-item-title">
                                         <span class="menu-list-item-name">{{ $product->name }}</span>
                                         <span class="menu-list-item-price-row">
