@@ -22,8 +22,8 @@
       .corner-ribbon{
         width: 400px;
         background: #e43;
-        position: absolute;
-        top: 25px;
+        position: relative;
+        /*top: 40px;*/
         left: -50px;
         text-align: center;
         line-height: 56px;
@@ -39,7 +39,7 @@
       /* Custom styles */
 
       .corner-ribbon.sticky{
-        position: fixed;
+        position: relative;
       }
 
       .corner-ribbon.shadow{
@@ -49,7 +49,7 @@
       /* Different positions */
 
       .corner-ribbon.top-left{
-        top: 135px;
+        /*top: 135px;*/
         left: -130px;
         transform: rotate(-45deg);
         -webkit-transform: rotate(-45deg);
@@ -109,7 +109,7 @@
         <nav class="navbar navbar-fixed-top shadow navbar-fixed-active" id="js-nav">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" id="navbar-button">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -120,7 +120,7 @@
                     </a>
                 </div>
 
-                <div class=" navbar " id="">
+                <div class="navbar collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <!-- <li><a href="#">home</a></li> -->
                         <!-- <li><b href="" style="font-size: 14px; color: red;">Hjemlevering **  &nbsp;</b></li> -->
@@ -154,56 +154,55 @@
         <div class="modal fade" id="bulk-order" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="">
-                        <div class="col-md-12">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h3 class="modal-title text-center">PRISFØRESPØRSEL/BESTILLINGSSKJEMA</h3>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3 class="modal-title text-center">PRISFØRESPØRSEL/BESTILLINGSSKJEMA</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="contact-form modal-body" style="margin-bottom: 15px;">
+                            <form role="form" id="bulk-order-form" action="" method="">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <select name="product" id="bulkorder-for" class="form-control">
+                                        <option value="PRISFØRESPØRSEL/TILBUD" selected >PRISFØRESPØRSEL/TILBUD</option>
+                                        <option value="BESTILLINGSSKJEMA">BESTILLINGSSKJEMA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="bulkorder-name" class="form-control" name="name" placeholder="Firma *" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text"  id="bulkorder-phone" class="form-control" name="phone" placeholder="Kontakt Person *" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text"  id="bulkorder-address" class="form-control" name="address" placeholder="Addresse" />
+                                </div>
+                                <!-- <div class="form-group">
+                                    <input type="text" id="bulkorder-land" class="form-control" name="land" placeholder="Land *" required />
+                                </div> -->
+                                <div class="form-group">
+                                    <input type="text" id="bulkorder-poststed" class="form-control" name="poststed" placeholder="Poststed" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="bulkorder-post_number" class="form-control" name="post_number" placeholder="Postnummer" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="bulkorder-email" name="email" placeholder="Email *" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="bulkorder-tlf" name="tlf" placeholder="Tlf *" required />
+                                </div>
+                                <!-- <div class="form-group">
+                                    <input type="text" class="form-control" id="bulkorder-fax" name="fax" placeholder="Fax" />
+                                </div> -->
+                                <div class="form-group">
+                                    <textarea class="form-control" id="bulkorder-inquiry" name="additional_inquiry" placeholder="Melding" rows="4"></textarea>
+                                </div>
+                                <p style="color: #FF0000">Felt merket med * må fylles ut.</p>
+                                <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="bulk-submit">send inn</button>
+                            </form>
                         </div>
-                        <div class="col-md-8 col-md-push-2">
-                            <div class="contact-form" style="margin-bottom: 15px;">
-                                <form role="form" id="bulk-order-form" action="" method="">
-                                    {{ csrf_field() }}
-                                    <div class="form-group">
-                                        <select name="product" id="bulkorder-for" class="form-control">
-                                            <option value="PRISFØRESPØRSEL/TILBUD" selected >PRISFØRESPØRSEL/TILBUD</option>
-                                            <option value="BESTILLINGSSKJEMA">BESTILLINGSSKJEMA</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" id="bulkorder-name" class="form-control" name="name" placeholder="Firma *" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text"  id="bulkorder-phone" class="form-control" name="phone" placeholder="Kontakt Person *" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text"  id="bulkorder-address" class="form-control" name="address" placeholder="Addresse" />
-                                    </div>
-                                    <!-- <div class="form-group">
-                                        <input type="text" id="bulkorder-land" class="form-control" name="land" placeholder="Land *" required />
-                                    </div> -->
-                                    <div class="form-group">
-                                        <input type="text" id="bulkorder-poststed" class="form-control" name="poststed" placeholder="Poststed" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" id="bulkorder-post_number" class="form-control" name="post_number" placeholder="Postnummer" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="bulkorder-email" name="email" placeholder="Email *" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="bulkorder-tlf" name="tlf" placeholder="Tlf *" required />
-                                    </div>
-                                    <!-- <div class="form-group">
-                                        <input type="text" class="form-control" id="bulkorder-fax" name="fax" placeholder="Fax" />
-                                    </div> -->
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="bulkorder-inquiry" name="additional_inquiry" placeholder="Melding" rows="4"></textarea>
-                                    </div>
-                                    <p style="color: #FF0000">Felt merket med * må fylles ut.</p>
-                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="bulk-submit">send inn</button>
-                                </form>
-                            </div>
-                        </div>
+                        {{-- </div> --}}
                     </div>
                 </div>
             </div>
@@ -212,41 +211,39 @@
         <div class="modal fade" id="user-checkout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="">
-                        <div class="col-md-12">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h2 class="main-title text-center">Fullfør bestillingen</h2>
-                        </div>
-                        <div class="col-md-8 col-md-push-2">
-                            <div class="contact-form">
-                                <h4 style="margin: 10px 0px;">PERSONLIGE OPPLYSNINGER OG LEVERINGSADRESSE</h4>
-                                <form id="checkout-form" role="form" action="" method="">
-                                    {{ csrf_field() }}
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="checkout-name" name="name" placeholder="Fornavn *" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="checkout-etternavn" name="etternavn" placeholder="Etternavn *" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" id="checkout-email" name="email" placeholder="Epost *" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="checkout-address" name="address" placeholder="Adresse *" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="checkout-postnr" name="postnr" placeholder="Postnr *" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="checkout-sted" name="sted" placeholder="Sted *" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="checkout-phone" name="phone" placeholder="Telefon *" required />
-                                    </div>
-                                    <p style="color: #FF0000">Fyll inn felter merket med *</p>
-                                    <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="order-confirm">Bekreft</button>
-                                </form>
-                            </div>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h2 class="modal-title text-center">Fullfør bestillingen</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="contact-form modal-body">
+                            <h4 style="margin: 10px 0px;">PERSONLIGE OPPLYSNINGER OG LEVERINGSADRESSE</h4>
+                            <form id="checkout-form" role="form" action="" method="">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="checkout-name" name="name" placeholder="Fornavn *" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="checkout-etternavn" name="etternavn" placeholder="Etternavn *" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="checkout-email" name="email" placeholder="Epost *" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="checkout-address" name="address" placeholder="Adresse *" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="checkout-postnr" name="postnr" placeholder="Postnr *" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="checkout-sted" name="sted" placeholder="Sted *" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="checkout-phone" name="phone" placeholder="Telefon *" required />
+                                </div>
+                                <p style="color: #FF0000">Fyll inn felter merket med *</p>
+                                <button type="submit" name="submit" class="btn btn-primary btn-lg text-center" id="order-confirm">Bekreft</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -268,9 +265,11 @@
 
             <div class="home-slider text-center">
                 <div class="swiper-wrapper" style="background: url('frontEnd/img/h5.jpg');">
+                    <div id="down-to-slide" class=""></div>
 
                     <div class="swiper-slide">
 
+                        <div class="corner-ribbon top-left sticky red shadow .visible-lg-*">Hjemlevering!!</div>
                        <h1 class="main-heading inverse" style="color:#00008b;">velkommen til aloki<span class="sub-header" style="font-size: 22px; color:#00008b;">LEVERANDØR AV SJØMAT TIL BEDRIFTER OG PRIVATKUNDER</span>
 
                             <!-- <span class="main-heading-decor">                          
@@ -287,48 +286,47 @@
                                 </span>
                             </span> -->
                         </h1>
-                        <div class="corner-ribbon top-left sticky red shadow">Hjemlevering!!</div>
-                        <div class="row" style="margin-top: 100px;  " >
-     <div class="service_ col-md-10 col-md-offset-1" >
-       <div class="col-md-4 col-sm-4">
-        <div class="box">
-        <div class="box_con">
-            <i class="fas fa-truck fa-3x" style="color:#c19c62;"></i><br><br>
-         <span class="box_title">Fri Frakt</span> <br><span class="box-1">i Oslo</span>
-         </div>
-         <div class="circle hidden-xs"><span class="delivery"></span></div>
-        </div>
-       </div>
-      <!--  <div class="col-md-3">
-        <div class="box">
-        <div class="box_con">
-            <i class="fas fa-phone fa-3x" style="color:#c19c62;"></i><br><br>
-         <span class="box_title">KUNDESERVICE</span><br>man-fre kl 08 - 16
-         </div>
-         <div class="circle hidden-xs"><span class="support"></span></div>
-        </div>
-       </div> -->
-       <div class="col-md-4 col-sm-4">
-        <div class="box">
-        <div class="box_con">
-            <i class="fas fa-thumbs-up fa-3x" style="color:#c19c62;"></i><br><br>
-         <span class="box_title" >100% KVALITETSGARANTI</span><br><span class="box-1">TA VARE PÅ KVITTERINGEN </span><br>&nbsp;
-         </div>
-         <div class="circle hidden-xs"><span class="guarantee"></span></div>
-        </div>
-       </div>
-       <div class="col-md-4 col-sm-4">
-        <div class="box">
-        <div class="box_con">
-            <i class="fas fa-boxes fa-3x" style="color:#c19c62;"></i><br><br>
-         <span class="box_title" >GOD KAPASITET</span> <br><span class="box-1">levering uansett størrelse</span>
-         </div>
-         <div class="circle hidden-xs"><span class="bulk"></span></div>
-        </div>
-       </div>
-      </div>
-      <div class="clearfix"></div>
-   </div>
+                        <div class="row space-between-header" style="margin-top: 100px;">
+                     <div class="service_ col-md-10 col-md-offset-1" >
+                       <div class="col-md-4 col-sm-4">
+                        <div class="box">
+                        <div class="box_con">
+                            <i class="fas fa-truck fa-3x" style="color:#c19c62;"></i><br><br>
+                         <span class="box_title">Fri Frakt</span> <br><span class="box-1">i Oslo</span>
+                         </div>
+                         <div class="circle hidden-xs"><span class="delivery"></span></div>
+                        </div>
+                       </div>
+                          <!--  <div class="col-md-3">
+                            <div class="box">
+                            <div class="box_con">
+                                <i class="fas fa-phone fa-3x" style="color:#c19c62;"></i><br><br>
+                             <span class="box_title">KUNDESERVICE</span><br>man-fre kl 08 - 16
+                             </div>
+                             <div class="circle hidden-xs"><span class="support"></span></div>
+                            </div>
+                           </div> -->
+                           <div class="col-md-4 col-sm-4">
+                            <div class="box">
+                            <div class="box_con">
+                                <i class="fas fa-thumbs-up fa-3x" style="color:#c19c62;"></i><br><br>
+                             <span class="box_title" >100% KVALITETSGARANTI</span><br><span class="box-1">TA VARE PÅ KVITTERINGEN </span><br>&nbsp;
+                             </div>
+                             <div class="circle hidden-xs"><span class="guarantee"></span></div>
+                            </div>
+                           </div>
+                           <div class="col-md-4 col-sm-4">
+                            <div class="box">
+                            <div class="box_con">
+                                <i class="fas fa-boxes fa-3x" style="color:#c19c62;"></i><br><br>
+                             <span class="box_title" >GOD KAPASITET</span> <br><span class="box-1">levering uansett størrelse</span>
+                             </div>
+                             <div class="circle hidden-xs"><span class="bulk"></span></div>
+                            </div>
+                           </div>
+                          </div>
+                          <div class="clearfix"></div>
+                       </div>
                         <!-- <h2 class="home-slider-title-main">100% fresh</h2>
                         <div class="home-slider-title-small" >Lorem ipsum dolor sit amet, consectetur adipisicing</div>
 
@@ -399,13 +397,14 @@
                         </h2>
                     </div>
 
-                    <ul class="col-md-12" id="product">
+                    <ul id="product">
                         @if(count($products) > 0)
                             @foreach($products as $product)
                                 <li class="col-md-4 col-sm-6 col-xs-6 wow fadeInDown product-li" data-wow-delay="0.2s">
                                     <a href="#" class="" data-toggle="modal" data-target="#menu-01">
-                                        <img src="{{ asset('images/products').'/'.$product->image }}" alt="placehoder" class="img-responsive">
-                                    </a>                                    <span class="menu-list-item-title">
+                                        <img src="{{ asset('images/products').'/'.$product->image }}" alt="placehoder">
+                                    </a>
+                                    <span class="menu-list-item-title">
                                         <span class="menu-list-item-name">{{ $product->name }}</span>
                                         <span class="menu-list-item-price-row">
                                             <span class="menu-list-item-price">KR.<del class="text-danger">{{ number_format($product->old_price, 2, '.', ',') }}</del>&nbsp;{{ number_format($product->price, 2, '.', ',') }}
@@ -414,7 +413,9 @@
                                         </span>
                                     </span>
                                     <div class="cartDiv">
-                                    <span class="" style="color: #000;">{{ $product->description }}</span>
+                                        <div class="limit-2-line">
+                                            <span class="" style="color: #000;">{{ $product->description }}</span>
+                                        </div>
                                         <span class="menu-list-item-title">
                                             <span class="menu-list-item-name">Mengde :
                                                 <input type="hidden" class="productId" name="productId" value="{{ $product->id }}">
@@ -446,7 +447,7 @@
                     </ul> 
                 </div>
                 <div class="col-md-12 text-center">
-                <button type="submit" id="see-all" name="submit" class="btn btn-primary btn-lg text-center bulk-submit" style="margin-top: 50px;">Se alle Produkter</button>
+                <button type="submit" id="see-all" name="submit" class="btn btn-primary btn-lg text-center bulk-submit" style="margin-top: 50px;">Se alle produkter</button>
                 </div>
             </div>
         </section>
@@ -459,7 +460,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 text-center">
-                            <h2 class="main-heading inverse"> Kvalitetsgaranti<span></span>
+                            <h2 class="main-heading inverse quality-heading"> Kvalitetsgaranti<span></span>
                                <!--  <span class="main-heading-decor">
                                     <span class=""><img class="wow fadeInUp js-rotate" data-wow-delay=".2s" src="{{ asset('frontEnd/img/asterix.svg') }}" alt="decor" width="20" height="20"></span>
 
@@ -1358,19 +1359,17 @@
                             </form>
                         </div>
                     </div>
-                    <!-- Modal -->
+                    <!-- Response Modal -->
                     <div class="modal fade" id="submit-model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                                <div class="">
-                                    <div class="col-md-12">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                        <h2 id="contact-us-response" class="modal-title text-center">Fill details</h2>
-                                    </div>
-                                    <div class="col-md-8 col-md-push-2">
-                                        <div class="contact-form text-center">
-                                            <button type="submit" name="submit" class="btn btn-primary btn-lg text-center"  data-dismiss="modal">Ok</button>
-                                        </div>
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h2 id="contact-us-response" class="modal-title text-center">Fill details</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="contact-form text-center">
+                                        <button type="submit" name="submit" class="btn btn-primary btn-lg text-center"  data-dismiss="modal">Ok</button>
                                     </div>
                                 </div>
                             </div>
@@ -1413,5 +1412,13 @@
         <script src="{{ asset('frontEnd/js/contactUsForm.js') }}"></script>
         <script src="{{ asset('frontEnd/js/cart.js') }}"></script>
         <script src="{{ asset('frontEnd/js/see_all_product.js') }}"></script>
+        <script>
+            // Save details when bulk order form submit
+            $(document).ready(function(){
+                $("#navbar-button").click(function(){
+                    $('.swiper-slide').toggleClass("down-slide");
+                });
+            });
+        </script>
     </body>
 </html>

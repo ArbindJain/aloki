@@ -4232,7 +4232,7 @@ a:hover, a:active, a:focus {
       min-height: 100vh; }
     .home.image-slider .swiper-slide {
       min-height: 100vh;
-      padding: 25vh 15px 180px;
+      padding: 130px 15px 180px;
       box-sizing: border-box;
       background-size: cover !important;
       background-position: center !important; }
@@ -4973,20 +4973,79 @@ a:hover, a:active, a:focus {
   margin-bottom: 0px;
 }
 
+
+/*----------------------My Style----------------------*/
+
+/*Screen size less than 480px*/
+@media (max-width: 479px) {
+  .navbar-nav {
+    margin-top: 0;
+  }
+
+  .home.image-slider .swiper-slide {
+    /*padding: 450px 15px 50px !important;*/
+  }
+
+  .home h1 {
+    font-size: 69px;
+  }
+
+  .sub-header {
+    font-size: 12px !important;
+  }
+
+  .corner-ribbon.top-left {
+    display: none;
+  }
+
+  .space-between-header {
+    margin-top: 50px !important;
+  }
+
+  .modal-title {
+    font-size: 16px !important;
+  }
+
+  .table > thead > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > th,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > th,
+  .table > tfoot > tr > td {
+    padding: 3px;
+    font-size: 14px;
+  }
+
+  .modal-button {
+    padding: 6px 7px;
+  }
+
+  .quality-heading {
+    font-size: 50px;
+  }
+}
+
+/*Screen size between 480px and 991px*/
 @media (min-width: 480px) and (max-width: 991px) {
   .navbar-nav {
     margin-top: 0;
   }
 
   .home.image-slider .swiper-slide {
-    padding: 68vh 15px 75px;
+    /*padding: 500px 15px 75px;*/
+  }
+
+  .modal-title {
+    font-size: 24px !important;
   }
 
   .corner-ribbon.top-left {
-    top: 355px !important;
+    /*top: 355px !important;*/
+    display: none;
   }
 }
 
+/*Screen size between 992px and 1199px*/
 @media (min-width: 992px) and (max-width: 1199px) {
   .navbar-nav {
     margin-top: 0;
@@ -4997,11 +5056,11 @@ a:hover, a:active, a:focus {
   }
 
   .corner-ribbon.top-left {
-    top: 355px !important;
+    display: none;
   }
 
   .home.image-slider .swiper-slide {
-    padding: 65vh 15px 75px;
+    /*padding: 500px 15px 75px;*/
   }
 
   .home h1 {
@@ -5009,6 +5068,7 @@ a:hover, a:active, a:focus {
   }
 }
 
+/*Screen size more than 1200px*/
 @media (min-width: 1200px) {
   .navbar-nav {
     float: right;
@@ -5018,4 +5078,22 @@ a:hover, a:active, a:focus {
 .swiper-pagination-bullet-active {
     opacity: 0;
 }
+
+.limit-2-line {
+  line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.down-slide {
+  padding: 400px 15px 75px !important;
+}
+
+.container-fluid > .navbar-collapse {
+     margin-right: 0px;
+     margin-left: 0px;
+}
+
 /*# sourceMappingURL=theme.css.map */
