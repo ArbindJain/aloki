@@ -16,7 +16,7 @@
 <!-- Date Picker -->
 <link rel="stylesheet" href="{{ asset('admin/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/dist/img/favicon.png')}}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/dist/img/favicon.ico')}}">
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
