@@ -34,13 +34,15 @@
                     </tr>
                 </thead>
                 <tbody>
+                   <!--  <pre>{{var_dump($orders)}}</pre> -->
+                    
                     @foreach ($orders as $order)
                         <tr>
                             <td>{{ $loop->index + 1 }}</td>
                             <td>{{ $order->user_name }}</td>
                             <td>{{ $order->user_email }}</td>
                             <td>{{ $order->user_phone }}</td>
-                            <td>{{ $order->user_address }}</td>
+                            <td>{{ $order->user_address }},{{$order->user_postnr}},{{$order->user_sted}}</td>
                             <td>{{ $order->order_items }}</td>
                             <td>{{ $order->order_value }}</td>
                             <td>
